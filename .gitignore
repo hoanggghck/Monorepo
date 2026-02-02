@@ -45,3 +45,4 @@ pnpm-debug.log*
 # ===============================
 # TypeScript
 # ==============================
+packages/utils/node_modules/
