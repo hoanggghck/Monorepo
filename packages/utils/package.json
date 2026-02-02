@@ -1,0 +1,7 @@
+{
+  "name": "@repo/utils",
+  "private": true,
+  "dependencies": {
+    "@repo/types": "workspace:*"
+  }
+}
