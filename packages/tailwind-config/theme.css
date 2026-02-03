@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *, [data-theme=dark], [data-theme=dark] *));
+@theme {
+  --color-primary:            hsl(220 90% 56%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-background:         hsl(0 0% 100%);
+  --color-foreground:         hsl(0 0% 10%);
+  --color-border:             hsl(0 0% 85%);
+  --color-red:                hsl(0 85% 55%);
+}
+@layer base {
+  .dark,
+  [data-theme="dark"] {
+    --color-primary:            hsl(220 90% 70%);
+    --color-primary-foreground: hsl(0 0% 10%);
+    --color-background:         hsl(220 10% 10%);
+    --color-foreground:         hsl(0 0% 100%);
+    --color-border:             hsl(220 10% 25%);
+    --color-red:                hsl(0 85% 65%);
+  }
+
+  html {
+    @apply bg-background text-foreground;
+  }
+}
