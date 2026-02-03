@@ -47,3 +47,4 @@ pnpm-debug.log*
 # ==============================
 packages/utils/node_modules/
 .turbo/
+pnpm-lock.yaml
