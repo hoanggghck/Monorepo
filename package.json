@@ -1,0 +1,15 @@
+{
+  "name": "my-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.15.1",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "pnpm -r build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "turbo": "^2.8.1"
+  }
+}
