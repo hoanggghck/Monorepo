@@ -1,0 +1,38 @@
+export const workflows = [
+  {
+    id: 1,
+    name: "Leave Request",
+    description: "Employee leave approval workflow",
+    steps: 3,
+    approvers: "Manager, HR Director",
+    sla: "5 business days",
+    status: "Active",
+  },
+  {
+    id: 2,
+    name: "Expense Reimbursement",
+    description: "Expense claim submission and approval",
+    steps: 4,
+    approvers: "Manager, Finance, CFO",
+    sla: "10 business days",
+    status: "Active",
+  },
+  {
+    id: 3,
+    name: "Task Assignment",
+    description: "Project task assignment workflow",
+    steps: 2,
+    approvers: "Team Lead",
+    sla: "3 business days",
+    status: "Active",
+  },
+  {
+    id: 4,
+    name: "Performance Review",
+    description: "Annual performance review process",
+    steps: 5,
+    approvers: "Manager, HR, Executive",
+    sla: "30 days",
+    status: "Inactive",
+  },
+];
