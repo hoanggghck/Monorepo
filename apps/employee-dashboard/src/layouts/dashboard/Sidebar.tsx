@@ -1,39 +1,42 @@
-// src/layouts/Sidebar.tsx
 import { Link, useLocation } from "react-router-dom"
-import { SIDEBAR_ITEMS } from "./mock"
 import { cn } from "@repo/ui/utils";
 import { Button } from "@repo/ui";
 import { IconLogOut } from "@repo/icons";
 import { useTheme } from "~/provider/theme-provider";
-
+import { SIDEBAR_ITEMS } from "./mock";
 
 export default function Sidebar() {
   const { toggleTheme } = useTheme();
   return (
     <aside
       className={cn(
-        "fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border transition-transform duration-300 ease-in-out z-40 lg:z-0 lg:static lg:translate-x-0 -translate-x-full overflow-y-auto",
+        "fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border transition-transform duration-300 ease-in-out z-40 lg:z-0 lg:static lg:translate-x-0 -translate-x-full",
       )}
     >
-      <div className="flex flex-col h-full ">
+      <div className="flex flex-col h-full">
         <div className="p-6 border-b border-sidebar-border">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-sidebar-primary rounded-lg flex items-center justify-center">
               <p className="text-white font-bold text-xs">Goldz</p>
             </div>
             <div>
-              <h1 className="font-bold text-sidebar-foreground text-lg">AdminHub</h1>
-              <p className="text-xs text-sidebar-foreground/60">Cổng Thông Tin HR</p>
+              <h1 className="font-bold text-sidebar-foreground text-lg">WorkHub</h1>
+              <p className="text-xs text-sidebar-foreground/60">Bảng Điều Khiển Nhân Viên</p>
             </div>
           </div>
         </div>
-        <nav className="flex-1 px-3 py-6 space-y-2">
+        <nav className="flex-1 overflow-y-auto px-3 py-6 space-y-2">
           {SIDEBAR_ITEMS.map((item, index) => <SidebarItem key={index} item={item} />)}
         </nav>
         <div className="p-4 border-t border-sidebar-border space-y-3">
-          <div className="px-4 py-3 bg-sidebar-accent rounded-lg">
-            <p className="text-sm font-medium text-sidebar-accent-foreground">Người Dùng Quản Trị</p>
-            <p className="text-xs text-sidebar-accent-foreground/70">system@company.com</p>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+              H
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold truncate text-sidebar-foreground">Hoang Duy</p>
+              <p className="text-xs text-gray-100 capitalize">Kỹ Thuật</p>
+            </div>
           </div>
           <Button
             variant="ghost"

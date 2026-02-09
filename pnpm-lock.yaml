@@ -100,11 +100,20 @@ importers:
         specifier: ^6.0.5
         version: 6.0.5(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.31.1))
 
-  apps/customer-service:
+  apps/employee-dashboard:
     dependencies:
+      '@repo/icons':
+        specifier: workspace:*
+        version: link:../../packages/icons
+      '@repo/tailwind-config':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-config
       '@repo/types':
         specifier: workspace:*
         version: link:../../packages/types
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@repo/utils':
         specifier: workspace:*
         version: link:../../packages/utils
@@ -114,6 +123,9 @@ importers:
       react-dom:
         specifier: ^19.2.0
         version: 19.2.4(react@19.2.4)
+      react-router-dom:
+        specifier: ^7.13.0
+        version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.1

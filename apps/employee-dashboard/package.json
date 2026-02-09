@@ -1,5 +1,5 @@
 {
-  "name": "customer-service",
+  "name": "employee-dashboard",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,10 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@repo/icons": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/types": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "@repo/utils": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "@repo/utils": "workspace:*",
-    "@repo/types": "workspace:*"
+    "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

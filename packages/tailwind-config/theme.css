@@ -54,6 +54,32 @@
 
 
 @layer base {
+   /* ===== Firefox ===== */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--color-muted-foreground)) transparent;
+  }
+
+  /* ===== Webkit (Chrome, Edge, Safari) ===== */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--color-muted-foreground));
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--color-ring));
+  }
   .dark,
   [data-theme="dark"] {
     --color-success: hsl(142 70% 45%);
@@ -103,6 +129,20 @@
     --color-sidebar-accent-foreground: hsl(0 0% 96%);
     --color-sidebar-border: hsl(217 33% 14%);
     --color-sidebar-ring: hsl(30 96% 53%);
+  }
+  .dark *,
+  [data-theme="dark"] * {
+    scrollbar-color: hsl(var(--color-muted-foreground)) transparent;
+  }
+
+  .dark *::-webkit-scrollbar-thumb,
+  [data-theme="dark"] *::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--color-muted-foreground));
+  }
+
+  .dark *::-webkit-scrollbar-thumb:hover,
+  [data-theme="dark"] *::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--color-ring));
   }
 
   html {
