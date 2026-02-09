@@ -3,33 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
-
   "type": "module",
-
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     }
   },
-
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "prepare": "pnpm build"
   },
-
   "dependencies": {
     "lucide-react": "^0.300.0"
   },
-
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
-
   "devDependencies": {
     "@types/react": "^19.2.10",
     "tsup": "^8.5.1",

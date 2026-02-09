@@ -20,22 +20,21 @@ import {
   Edit2,
   Send,
   Search,
+  CheckSquare2,
+  Calendar,
+  Bell,
+  MessageCircle,
+  LogIn,
 } from "lucide-react"
 
 import type { LucideIcon, LucideProps } from "lucide-react"
 import React from "react";
 
-/**
- * HOF tạo Icon component
- */
 const withIcon = (Icon: LucideIcon) => {
   return ({ size = 20, ...props }: LucideProps) =>
     React.createElement(Icon, { size, ...props });
 }
 
-/**
- * Export icons
- */
 export const IconPlus = withIcon(Plus)
 export const IconLayoutDashboard = withIcon(LayoutDashboard)
 export const IconBuilding2 = withIcon(Building2)
@@ -57,3 +56,8 @@ export const IconShield = withIcon(Shield)
 export const IconEdit2 = withIcon(Edit2)
 export const IconSend = withIcon(Send)
 export const IconSearch = withIcon(Search)
+export const IconCheckSquare = withIcon(CheckSquare2)
+export const IconCalendar = withIcon(Calendar)
+export const IconBell = withIcon(Bell)
+export const IconMessageCircle = withIcon(MessageCircle);
+export const IconLogIn = withIcon(LogIn);

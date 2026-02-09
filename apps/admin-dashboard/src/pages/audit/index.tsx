@@ -1,80 +1,13 @@
 import { IconBookMarked, IconSearch } from "@repo/icons";
 import { Card, Input, Label } from "@repo/ui";
 import { useState } from "react";
+import { AuditTable } from "~/components/audit/AuditTable";
+import { auditLogs } from "~/mock/audit";
 
 export default function AuditPage() {
   const [filterUser, setFilterUser] = useState("");
   const [filterAction, setFilterAction] = useState("");
   const [filterDate, setFilterDate] = useState("");
-  const auditLogs = [
-    {
-      id: 1,
-      user: "Sarah Johnson",
-      action: "Created new department",
-      target: "Engineering",
-      timestamp: "2024-02-05 10:30 AM",
-      details: "Created new Engineering department with 5 initial members",
-    },
-    {
-      id: 2,
-      user: "Michael Chen",
-      action: "Approved leave request",
-      target: "John Smith - 5 days",
-      timestamp: "2024-02-05 09:15 AM",
-      details: "Approved annual leave for John Smith from Feb 10-16",
-    },
-    {
-      id: 3,
-      user: "Emily Davis",
-      action: "Modified user permissions",
-      target: "Alex Rodriguez",
-      timestamp: "2024-02-04 03:45 PM",
-      details:
-        "Changed role from Employee to Manager, added 12 new permissions",
-    },
-    {
-      id: 4,
-      user: "System",
-      action: "Scheduled workflow",
-      target: "Payroll Processing",
-      timestamp: "2024-02-04 02:00 PM",
-      details: "Monthly payroll processing workflow started",
-    },
-    {
-      id: 5,
-      user: "Lisa Wong",
-      action: "Created new user",
-      target: "David Park",
-      timestamp: "2024-02-04 11:20 AM",
-      details:
-        "Created new employee account for David Park (david.park@company.com)",
-    },
-    {
-      id: 6,
-      user: "Robert Taylor",
-      action: "Updated company policy",
-      target: "Remote Work Policy",
-      timestamp: "2024-02-03 04:30 PM",
-      details: "Updated remote work policy with new flexible working hours",
-    },
-    {
-      id: 7,
-      user: "Jessica Brown",
-      action: "Submitted expense report",
-      target: "$1,250.00",
-      timestamp: "2024-02-03 01:15 PM",
-      details:
-        "Submitted expense reimbursement request for conference attendance",
-    },
-    {
-      id: 8,
-      user: "Chris Wilson",
-      action: "Modified workflow",
-      target: "Leave Request Workflow",
-      timestamp: "2024-02-02 10:00 AM",
-      details: "Changed SLA from 5 to 3 business days for leave approvals",
-    },
-  ];
 
   const filteredLogs = auditLogs.filter((log) => {
     const userMatch = log.user.toLowerCase().includes(filterUser.toLowerCase());
@@ -94,8 +27,6 @@ export default function AuditPage() {
           tuân thủ và bảo mật.
         </p>
       </div>
-
-      {/* Filters */}
       <Card className="p-6 mb-6">
         <div className="flex items-center gap-2 mb-4">
           <IconSearch size={20} className="text-muted-foreground" />
@@ -139,8 +70,6 @@ export default function AuditPage() {
           </div>
         </div>
       </Card>
-
-      {/* Audit Log Table */}
       <Card className="p-6">
         <div className="flex items-center gap-2 mb-6">
           <IconBookMarked size={24} className="text-primary" />
@@ -148,60 +77,9 @@ export default function AuditPage() {
             Nhật Ký Hoạt Động ({filteredLogs.length})
           </h2>
         </div>
-
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
-                  Người Dùng
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
-                  Hành Động
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
-                  Mục Tiêu
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
-                  Thời Gian
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
-                  Chi Tiết
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredLogs.map((log) => (
-                <tr
-                  key={log.id}
-                  className="border-b border-border hover:bg-gray-50 transition-colors"
-                >
-                  <td className="py-3 px-4 font-medium text-foreground">
-                    {log.user}
-                  </td>
-                  <td className="py-3 px-4">
-                    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">
-                      {log.action}
-                    </span>
-                  </td>
-                  <td className="py-3 px-4 text-muted-foreground text-sm">
-                    {log.target}
-                  </td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">
-                    {log.timestamp}
-                  </td>
-                  <td
-                    className="py-3 px-4 text-muted-foreground text-xs max-w-xs truncate"
-                    title={log.details}
-                  >
-                    {log.details}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <AuditTable logs={filteredLogs} />
         </div>
-
         {filteredLogs.length === 0 && (
           <div className="text-center py-12">
             <p className="text-muted-foreground">
