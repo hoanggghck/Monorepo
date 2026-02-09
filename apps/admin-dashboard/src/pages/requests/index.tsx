@@ -1,5 +1,5 @@
 import { IconClipboardList, IconPlus } from "@repo/icons";
-import { Button, Card, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@repo/ui";
+import { Button, Card, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
 
 export default function RequestsPage() {
   const requests = [
@@ -77,8 +77,6 @@ export default function RequestsPage() {
           </Button>
         </div>
       </div>
-
-      {/* Filters */}
       <Card className="p-4 mb-6">
         <div className="flex flex-wrap gap-4">
           <Select
@@ -113,71 +111,69 @@ export default function RequestsPage() {
           />
         </div>
       </Card>
-
-      {/* Requests List */}
       <Card className="p-6">
         <div className="flex items-center gap-2 mb-6">
           <IconClipboardList size={24} className="text-primary" />
           <h2 className="text-xl font-bold text-foreground">Tất Cả Yêu Cầu</h2>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+          <Table className="w-full text-sm">
+            <TableHeader>
+              <TableRow className="border-b border-border">
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Loại
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+                </TableHead>
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Nhân Viên
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+                </TableHead>
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Chi Tiết
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+                </TableHead>
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Trạng Thái
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+                </TableHead>
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Nộp Lúc
-                </th>
-                <th className="text-right py-3 px-4 font-medium text-muted-foreground">
+                </TableHead>
+                <TableHead className="text-right py-3 px-4 font-medium text-muted-foreground">
                   Thao Tác
-                </th>
-              </tr>
-            </thead>
-            <tbody>
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {requests.map((request) => (
-                <tr
+                <TableRow
                   key={request.id}
                   className="border-b border-border hover:bg-gray-50 transition-colors"
                 >
-                  <td className="py-3 px-4 font-medium text-foreground">
+                  <TableCell className="py-3 px-4 font-medium text-foreground">
                     {request.type}
-                  </td>
-                  <td className="py-3 px-4 text-foreground">
+                  </TableCell>
+                  <TableCell className="py-3 px-4 text-foreground">
                     {request.employee}
-                  </td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">
+                  </TableCell>
+                  <TableCell className="py-3 px-4 text-muted-foreground text-xs">
                     {request.dates || request.amount || request.description}
-                  </td>
-                  <td className="py-3 px-4">
+                  </TableCell>
+                  <TableCell className="py-3 px-4">
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}
                     >
                       {request.status}
                     </span>
-                  </td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">
+                  </TableCell>
+                  <TableCell className="py-3 px-4 text-muted-foreground text-xs">
                     {request.submitted}
-                  </td>
-                  <td className="py-3 px-4 text-right">
+                  </TableCell>
+                  <TableCell className="py-3 px-4 text-right">
                     <Button variant="outline" size="sm">
                       Xem
                     </Button>
-                  </td>
-                </tr>
+                  </TableCell>
+                </TableRow>
               ))}
-            </tbody>
-          </table>
+            </TableBody>
+          </Table>
         </div>
       </Card>
     </div>

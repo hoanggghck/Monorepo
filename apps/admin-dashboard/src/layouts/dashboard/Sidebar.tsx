@@ -6,7 +6,6 @@ import { Button } from "@repo/ui";
 import { IconLogOut } from "@repo/icons";
 import { useTheme } from "~/provider/theme-provider";
 
-
 export default function Sidebar() {
   const { toggleTheme } = useTheme();
   return (

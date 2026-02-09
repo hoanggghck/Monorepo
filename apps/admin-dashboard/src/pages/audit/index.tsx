@@ -1,5 +1,5 @@
 import { IconBookMarked, IconSearch } from "@repo/icons";
-import { Card, Input, Label } from "@repo/ui";
+import { Card, Input, Label, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
 import { useState } from "react";
 
 export default function AuditPage() {
@@ -94,8 +94,6 @@ export default function AuditPage() {
           tuân thủ và bảo mật.
         </p>
       </div>
-
-      {/* Filters */}
       <Card className="p-6 mb-6">
         <div className="flex items-center gap-2 mb-4">
           <IconSearch size={20} className="text-muted-foreground" />
@@ -139,8 +137,6 @@ export default function AuditPage() {
           </div>
         </div>
       </Card>
-
-      {/* Audit Log Table */}
       <Card className="p-6">
         <div className="flex items-center gap-2 mb-6">
           <IconBookMarked size={24} className="text-primary" />
@@ -148,58 +144,57 @@ export default function AuditPage() {
             Nhật Ký Hoạt Động ({filteredLogs.length})
           </h2>
         </div>
-
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+          <Table className="w-full text-sm">
+            <TableHeader>
+              <TableRow className="border-b border-border">
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Người Dùng
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+                </TableHead>
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Hành Động
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+                </TableHead>
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Mục Tiêu
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+                </TableHead>
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Thời Gian
-                </th>
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">
+                </TableHead>
+                <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
                   Chi Tiết
-                </th>
-              </tr>
-            </thead>
-            <tbody>
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {filteredLogs.map((log) => (
-                <tr
+                <TableRow
                   key={log.id}
                   className="border-b border-border hover:bg-gray-50 transition-colors"
                 >
-                  <td className="py-3 px-4 font-medium text-foreground">
+                  <TableCell className="py-3 px-4 font-medium text-foreground">
                     {log.user}
-                  </td>
-                  <td className="py-3 px-4">
+                  </TableCell>
+                  <TableCell className="py-3 px-4">
                     <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">
                       {log.action}
                     </span>
-                  </td>
-                  <td className="py-3 px-4 text-muted-foreground text-sm">
+                  </TableCell>
+                  <TableCell className="py-3 px-4 text-muted-foreground text-sm">
                     {log.target}
-                  </td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">
+                  </TableCell>
+                  <TableCell className="py-3 px-4 text-muted-foreground text-xs">
                     {log.timestamp}
-                  </td>
-                  <td
+                  </TableCell>
+                  <TableCell
                     className="py-3 px-4 text-muted-foreground text-xs max-w-xs truncate"
                     title={log.details}
                   >
                     {log.details}
-                  </td>
-                </tr>
+                  </TableCell>
+                </TableRow>
               ))}
-            </tbody>
-          </table>
+            </TableBody>
+          </Table>
         </div>
 
         {filteredLogs.length === 0 && (

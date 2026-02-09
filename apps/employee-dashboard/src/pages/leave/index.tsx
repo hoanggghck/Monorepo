@@ -1,5 +1,5 @@
 import { IconAlertCircle, IconCalendar, IconCheckCircle, IconClock, IconPlus } from "@repo/icons";
-import { Button } from "@repo/ui";
+import { Button, Card } from "@repo/ui";
 import { cn } from "@repo/ui/utils";
 import { useState } from "react";
 
@@ -122,36 +122,36 @@ export default function LeavePage() {
         </Button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <Card className="p-6">
           <p className="text-gray-600 text-sm mb-2">Nghỉ Phép</p>
           <div className="flex items-baseline gap-2">
             <p className="text-3xl font-bold text-blue-600">12</p>
             <p className="text-gray-500 text-sm">ngày còn lại</p>
           </div>
-        </div>
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        </Card>
+        <Card className="p-6">
           <p className="text-gray-600 text-sm mb-2">Nghỉ Ốm</p>
           <div className="flex items-baseline gap-2">
             <p className="text-3xl font-bold text-red-600">3</p>
             <p className="text-gray-500 text-sm">ngày còn lại</p>
           </div>
-        </div>
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        </Card>
+        <Card className="p-6">
           <p className="text-gray-600 text-sm mb-2">Việc Cá Nhân</p>
           <div className="flex items-baseline gap-2">
             <p className="text-3xl font-bold text-orange-600">2</p>
             <p className="text-gray-500 text-sm">ngày còn lại</p>
           </div>
-        </div>
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        </Card>
+        <Card className="p-6">
           <p className="text-gray-600 text-sm mb-2">Nghỉ Thường</p>
           <div className="flex items-baseline gap-2">
             <p className="text-3xl font-bold text-purple-600">5</p>
             <p className="text-gray-500 text-sm">ngày còn lại</p>
           </div>
-        </div>
+        </Card>
       </div>
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      <Card className="border-gray-200 overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-200 flex items-center gap-2">
           <IconCalendar className="w-5 h-5 text-blue-500" />
           <h2 className="text-lg font-bold text-gray-900">Đơn Xin Nghỉ</h2>
@@ -189,7 +189,7 @@ export default function LeavePage() {
             </div>
           ))}
         </div>
-      </div>
+      </Card>
     </div>
   );
 }

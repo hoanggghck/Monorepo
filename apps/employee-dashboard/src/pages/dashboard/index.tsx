@@ -1,5 +1,14 @@
-import { IconAlertCircle, IconBell, IconCheckCircle, IconClock, IconDollarSign, IconFileText, IconTrendingUp, IconUsers } from "@repo/icons";
-import { cn } from "@repo/ui";
+import {
+  IconAlertCircle,
+  IconBell,
+  IconCheckCircle,
+  IconClock,
+  IconDollarSign,
+  IconFileText,
+  IconTrendingUp,
+  IconUsers,
+} from "@repo/icons";
+import { Card, cn } from "@repo/ui";
 
 export default function DashboardPage() {
   const user = {
@@ -8,8 +17,8 @@ export default function DashboardPage() {
     role: "employee" as const,
     department: "Kỹ Thuật",
     email: "hoang@company.com",
-  }
-    const userStatus = {
+  };
+  const userStatus = {
     checkedIn: true,
     checkInTime: "08:30 AM",
     workingHours: "7.5 giờ",
@@ -70,11 +79,12 @@ export default function DashboardPage() {
       time: "6 giờ trước",
     },
   ];
-return (
-  <div className="p-6 md:p-8">
-      {/* Header */}
+  return (
+    <div className="p-6 md:p-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Chào mừng trở lại, {user?.name.split(" ")[0]}!</h1>
+        <h1 className="text-3xl font-bold text-gray-900">
+          Chào mừng trở lại, {user?.name.split(" ")[0]}!
+        </h1>
         <p className="text-gray-500 mt-2">
           {new Date().toLocaleDateString("vi-VN", {
             weekday: "long",
@@ -84,11 +94,8 @@ return (
           })}
         </p>
       </div>
-
-      {/* Quick Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        {/* Personal Info Card */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-600 text-sm font-medium">Tên</p>
@@ -100,15 +107,12 @@ return (
                 Nhân Viên
               </p>
             </div>
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg">
-              {user?.name.charAt(0).toUpperCase()}
-            </div>
           </div>
-        </div>
-
-        {/* Check-in Status */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <p className="text-gray-600 text-sm font-medium mb-3">Trạng Thái Chấm Công</p>
+        </Card>
+        <Card className="p-6">
+          <p className="text-gray-600 text-sm font-medium mb-3">
+            Trạng Thái Chấm Công
+          </p>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               {userStatus.checkedIn ? (
@@ -121,7 +125,9 @@ return (
               ) : (
                 <>
                   <IconAlertCircle className="w-5 h-5 text-orange-500" />
-                  <span className="text-gray-900 font-semibold">Chưa chấm công</span>
+                  <span className="text-gray-900 font-semibold">
+                    Chưa chấm công
+                  </span>
                 </>
               )}
             </div>
@@ -134,11 +140,11 @@ return (
               </p>
             )}
           </div>
-        </div>
-
-        {/* Tasks Summary */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <p className="text-gray-600 text-sm font-medium mb-3">Công Việc Hôm Nay</p>
+        </Card>
+        <Card className="p-6">
+          <p className="text-gray-600 text-sm font-medium mb-3">
+            Công Việc Hôm Nay
+          </p>
           <div className="space-y-2">
             <div className="flex justify-between items-center">
               <span className="text-gray-600 text-sm">Tổng Cộng</span>
@@ -159,10 +165,8 @@ return (
               </span>
             </div>
           </div>
-        </div>
-
-        {/* Notifications Preview */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        </Card>
+        <Card className="p-6">
           <p className="text-gray-600 text-sm font-medium mb-3">Thông Báo</p>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
@@ -172,75 +176,65 @@ return (
               </span>
             </div>
             <p className="text-gray-500 text-sm">
-              Bạn có {notifications.filter((n) => !n.read).length} tin nhắn
-              chưa đọc
+              Bạn có {notifications.filter((n) => !n.read).length} tin nhắn chưa
+              đọc
             </p>
           </div>
-        </div>
+        </Card>
       </div>
-
-      {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-        {/* Left Column - Notifications & Activity */}
-        <div className="lg:col-span-2 space-y-8">
-          {/* Recent Notifications */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="px-6 py-4 border-b border-gray-200 flex items-center gap-2">
-              <IconBell className="w-5 h-5 text-blue-500" />
-              <h2 className="text-lg font-bold text-gray-900">Thông Báo Gần Đây</h2>
+      <Card className="mb-8 border border-gray-200">
+        <div className="px-6 py-4 border-b border-gray-200 flex items-center gap-2">
+          <IconBell className="w-5 h-5 text-blue-500" />
+          <h2 className="text-lg font-bold text-gray-900">Thông Báo Gần Đây</h2>
+        </div>
+        <div className="divide-y divide-gray-200">
+          {notifications.map((notif) => (
+            <div
+              key={notif.id}
+              className={cn(
+                "px-6 py-4 hover:bg-gray-50 transition-colors",
+                !notif.read && "bg-blue-50",
+              )}
+            >
+              <div className="flex items-start justify-between">
+                <div className="flex-1">
+                  <p className="text-gray-900 font-medium text-sm">
+                    {notif.message}
+                  </p>
+                  <p className="text-gray-500 text-xs mt-1">{notif.time}</p>
+                </div>
+                {!notif.read && (
+                  <div className="w-2 h-2 rounded-full bg-blue-500 ml-2 mt-1 flex-shrink-0"></div>
+                )}
+              </div>
             </div>
-            <div className="divide-y divide-gray-200">
-              {notifications.map((notif) => (
-                <div
-                  key={notif.id}
-                  className={cn(
-                    "px-6 py-4 hover:bg-gray-50 transition-colors",
-                    !notif.read && "bg-blue-50"
-                  )}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <p className="text-gray-900 font-medium text-sm">
-                        {notif.message}
-                      </p>
-                      <p className="text-gray-500 text-xs mt-1">{notif.time}</p>
-                    </div>
-                    {!notif.read && (
-                      <div className="w-2 h-2 rounded-full bg-blue-500 ml-2 mt-1 flex-shrink-0"></div>
+          ))}
+        </div>
+      </Card>
+      <Card className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div className="px-6 py-4 border-b border-gray-200 flex items-center gap-2">
+          <IconTrendingUp className="w-5 h-5 text-purple-500" />
+          <h2 className="text-lg font-bold text-gray-900">Hoạt Động Nhóm</h2>
+        </div>
+        <div className="divide-y divide-gray-200">
+          {recentActivity.map((activity) => (
+            <div key={activity.id} className="px-6 py-4 hover:bg-gray-50">
+              <div className="flex items-start justify-between">
+                <div>
+                  <p className="text-gray-900 font-medium text-sm">
+                    <span className="font-bold">{activity.employee}</span>{" "}
+                    {activity.action}
+                    {activity.task && (
+                      <span className="text-blue-600"> "{activity.task}"</span>
                     )}
-                  </div>
+                  </p>
+                  <p className="text-gray-500 text-xs mt-1">{activity.time}</p>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-
-          {/* Recent Activity */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="px-6 py-4 border-b border-gray-200 flex items-center gap-2">
-              <IconTrendingUp className="w-5 h-5 text-purple-500" />
-              <h2 className="text-lg font-bold text-gray-900">Hoạt Động Nhóm</h2>
-            </div>
-            <div className="divide-y divide-gray-200">
-              {recentActivity.map((activity) => (
-                <div key={activity.id} className="px-6 py-4 hover:bg-gray-50">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <p className="text-gray-900 font-medium text-sm">
-                        <span className="font-bold">{activity.employee}</span>{" "}
-                        {activity.action}
-                        {activity.task && (
-                          <span className="text-blue-600"> "{activity.task}"</span>
-                        )}
-                      </p>
-                      <p className="text-gray-500 text-xs mt-1">{activity.time}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </Card>
     </div>
-)
+  );
 }

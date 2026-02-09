@@ -1,9 +1,9 @@
 import { IconPlus, IconSend } from "@repo/icons";
-import { Button, Card } from "@repo/ui";
+import { Button, Card, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Table, TableBody, TableCell, TableHead, TableHeader, TableRow, Textarea } from "@repo/ui";
 import { useState } from "react";
 
 export default function EmailPage() {
-const [tab, setTab] = useState("compose");
+  const [tab, setTab] = useState("compose");
 
   const emailTemplates = [
     {
@@ -55,8 +55,6 @@ const [tab, setTab] = useState("compose");
             </div>
           </div>
         </div>
-
-        {/* Tabs */}
         <div className="flex gap-2 mb-6 border-b border-border">
           {["compose", "templates", "logs"].map((tabName) => (
             <button
@@ -72,59 +70,65 @@ const [tab, setTab] = useState("compose");
             </button>
           ))}
         </div>
-
-        {/* Compose Tab */}
         {tab === "compose" && (
           <Card className="p-6">
             <h2 className="text-xl font-bold text-foreground mb-6">Gửi Email</h2>
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Tới</label>
-                  <input
+                  <Label className="block text-sm font-medium text-foreground mb-2">Tới</Label>
+                  <Input
                     type="email"
                     placeholder="recipient@company.com"
                     className="w-full px-4 py-2 border border-input rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Gửi Tới Nhóm</label>
-                  <select className="w-full px-4 py-2 border border-input rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
-                    <option>Chọn một nhóm...</option>
-                    <option>Tất Cả Nhân Viên</option>
-                    <option>Nhóm Kỹ Thuật</option>
-                    <option>Quản Lý</option>
-                    <option>Nhóm Nhân Sự</option>
-                  </select>
+                  <Label className="block text-sm font-medium text-foreground mb-2">Gửi Tới Nhóm</Label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Chọn một nhóm..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Tất Cả Nhân Viên</SelectItem>
+                      <SelectItem value="tech">Nhóm Kỹ Thuật</SelectItem>
+                      <SelectItem value="manager">Quản Lý</SelectItem>
+                      <SelectItem value="hr">Nhóm Nhân Sự</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
-
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Tiêu Đề</label>
-                <input
+                <Label className="block text-sm font-medium text-foreground mb-2">Tiêu Đề</Label>
+                <Input
                   type="text"
                   placeholder="Tiêu đề email"
                   className="w-full px-4 py-2 border border-input rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
-
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Mẫu</label>
-                <select className="w-full px-4 py-2 border border-input rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>-- Không Có Mẫu --</option>
-                  {emailTemplates.map((template) => (
-                    <option key={template.id}>{template.name}</option>
-                  ))}
-                </select>
+                <Label className="block text-sm font-medium text-foreground mb-2">Mẫu</Label>
+                <Select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="-- Không Có Mẫu --" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {emailTemplates.map((template) => (
+                      <SelectItem key={template.id} value={`${template.id}`}>
+                        {template.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Tin Nhắn</label>
-                <textarea
+                <Label className="block text-sm font-medium text-foreground mb-2">Tin Nhắn</Label>
+                <Textarea
                   rows={6}
                   placeholder="Viết tin nhắn của bạn ở đây..."
                   className="w-full px-4 py-2 border border-input rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                ></textarea>
+                />
               </div>
 
               <div className="flex gap-3 justify-end">
@@ -162,29 +166,27 @@ const [tab, setTab] = useState("compose");
             </div>
           </div>
         )}
-
-        {/* Logs Tab */}
         {tab === "logs" && (
           <Card className="p-6">
             <h2 className="text-xl font-bold text-foreground mb-6">Nhật Ký Email</h2>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Người Nhận</th>
-                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Tiêu Đề</th>
-                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Gửi Lúc</th>
-                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Trạng Thái</th>
-                    <th className="text-right py-3 px-4 font-medium text-muted-foreground">Thao Tác</th>
-                  </tr>
-                </thead>
-                <tbody>
+              <Table className="w-full text-sm">
+                <TableHeader>
+                  <TableRow className="border-b border-border">
+                    <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">Người Nhận</TableHead>
+                    <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">Tiêu Đề</TableHead>
+                    <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">Gửi Lúc</TableHead>
+                    <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">Trạng Thái</TableHead>
+                    <TableHead className="text-right py-3 px-4 font-medium text-muted-foreground">Thao Tác</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
                   {emailLogs.map((log) => (
-                    <tr key={log.id} className="border-b border-border hover:bg-gray-50 transition-colors">
-                      <td className="py-3 px-4 font-medium text-foreground">{log.recipient}</td>
-                      <td className="py-3 px-4 text-muted-foreground">{log.subject}</td>
-                      <td className="py-3 px-4 text-muted-foreground text-xs">{log.sent}</td>
-                      <td className="py-3 px-4">
+                    <TableRow key={log.id} className="border-b border-border hover:bg-gray-50 transition-colors">
+                      <TableCell className="py-3 px-4 font-medium text-foreground">{log.recipient}</TableCell>
+                      <TableCell className="py-3 px-4 text-muted-foreground">{log.subject}</TableCell>
+                      <TableCell className="py-3 px-4 text-muted-foreground text-xs">{log.sent}</TableCell>
+                      <TableCell className="py-3 px-4">
                         <span
                           className={`px-3 py-1 rounded-full text-xs font-medium ${
                             log.status === "Delivered"
@@ -194,16 +196,16 @@ const [tab, setTab] = useState("compose");
                         >
                           {log.status === "Delivered" ? "Đã Gửi" : "Lỗi"}
                         </span>
-                      </td>
-                      <td className="py-3 px-4 text-right">
+                      </TableCell>
+                      <TableCell className="py-3 px-4 text-right">
                         <Button variant="outline" size="sm">
                           Xem
                         </Button>
-                      </td>
-                    </tr>
+                      </TableCell>
+                    </TableRow>
                   ))}
-                </tbody>
-              </table>
+                </TableBody>
+              </Table>
             </div>
           </Card>
         )}

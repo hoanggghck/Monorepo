@@ -1,5 +1,5 @@
 import { IconCheckSquare, IconMessageCircle, IconPlus } from "@repo/icons";
-import { Button, cn } from "@repo/ui";
+import { Button, Card, cn } from "@repo/ui";
 import { useState } from "react";
 
 interface Task {
@@ -142,9 +142,9 @@ export default function TasksPage() {
       <div className="space-y-3">
         {filteredTasks.length > 0 ? (
           filteredTasks.map((task) => (
-            <div
+            <Card
               key={task.id}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 hover:shadow-md transition-shadow"
+              className="p-5"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-start gap-3 flex-1">
@@ -188,7 +188,7 @@ export default function TasksPage() {
                   <span className="text-xs">{task.comments}</span>
                 </button>
               </div>
-            </div>
+            </Card>
           ))
         ) : (
           <div className="text-center py-12">

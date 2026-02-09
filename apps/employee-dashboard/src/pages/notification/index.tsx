@@ -1,5 +1,5 @@
 import { IconBell, IconX } from "@repo/icons";
-import { Button, cn } from "@repo/ui";
+import { Button, Card, cn } from "@repo/ui";
 import { useState } from "react";
 
 interface Notification {
@@ -115,21 +115,18 @@ export default function NotificationsPage() {
           </p>
         </div>
         {unreadCount > 0 && (
-          <button
-            onClick={handleMarkAllAsRead}
-            className="text-blue-600 hover:text-blue-700 font-medium text-sm"
-          >
+          <Button onClick={handleMarkAllAsRead}>
             Đánh dấu tất cả là đã đọc
-          </button>
+          </Button>
         )}
       </div>
       <div className="space-y-3">
         {notifications.length > 0 ? (
           notifications.map((notif) => (
-            <div
+            <Card
               key={notif.id}
               className={cn(
-                "bg-white rounded-lg shadow-sm border border-gray-200 p-5 hover:shadow-md transition-all cursor-pointer",
+                "p-5 cursor-pointer",
                 !notif.read && "border-blue-200 bg-blue-50"
               )}
               onClick={() => !notif.read && handleMarkAsRead(notif.id)}
@@ -174,7 +171,7 @@ export default function NotificationsPage() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </Card>
           ))
         ) : (
           <div className="text-center py-12">

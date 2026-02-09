@@ -30,7 +30,7 @@ export default function Sidebar() {
         </nav>
         <div className="p-4 border-t border-sidebar-border space-y-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-linear-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm shrink-0">
               H
             </div>
             <div className="flex-1 min-w-0">

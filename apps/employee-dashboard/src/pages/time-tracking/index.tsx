@@ -1,4 +1,5 @@
 import { IconCalendar, IconClock, IconLogIn, IconLogOut } from "@repo/icons";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
 import { useState } from "react";
 
 interface CheckInRecord {
@@ -60,17 +61,13 @@ export default function TimeTrackingPage() {
 
   return (
     <div className="p-6 md:p-8">
-      {/* Header */}
       <div>
         <h1 className="text-3xl font-bold text-gray-900">Chấm Công</h1>
         <p className="text-gray-500 mt-1">Quản lý chấm công vào và ra</p>
       </div>
-
-      {/* Today's Status */}
-      <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-8 max-w-2xl">
+      <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-8 max-w-xl">
         <h2 className="text-xl font-bold text-gray-900 mb-6">Trạng Thái Hôm Nay</h2>
-
-        <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+        <div className="text-center p-6 bg-linear-to-br from-blue-50 to-blue-100 rounded-lg">
           <IconClock className="w-8 h-8 text-blue-600 mx-auto mb-2" />
           <p className="text-gray-600 text-sm mb-2">Giờ Vào</p>
           <p className="text-3xl font-bold text-blue-600">{checkInTime}</p>
@@ -86,51 +83,50 @@ export default function TimeTrackingPage() {
           <IconCalendar className="w-5 h-5 text-blue-500" />
           <h2 className="text-lg font-bold text-gray-900">Lịch Sử Chấm Công (7 Ngày Gần Nhất)</h2>
         </div>
-
         <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-gray-50 border-b border-gray-200">
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
+          <Table className="w-full">
+            <TableHeader>
+              <TableRow className="bg-gray-50 border-b border-gray-200">
+                <TableHead className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
                   Ngày
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
+                </TableHead>
+                <TableHead className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
                   Vào
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
+                </TableHead>
+                <TableHead className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
                   Ra
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
+                </TableHead>
+                <TableHead className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
                   Giờ Làm
-                </th>
-              </tr>
-            </thead>
-            <tbody>
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {checkInHistory.map((record, idx) => (
-                <tr
+                <TableRow
                   key={idx}
                   className="border-b border-gray-200 hover:bg-gray-50 transition-colors"
                 >
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                  <TableCell className="px-6 py-4 text-sm font-medium text-gray-900">
                     {new Date(record.date).toLocaleDateString("vi-VN", {
                       weekday: "short",
                       month: "short",
                       day: "numeric",
                     })}
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-600">
+                  </TableCell>
+                  <TableCell className="px-6 py-4 text-sm text-gray-600">
                     {record.checkInTime}
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-600">
+                  </TableCell>
+                  <TableCell className="px-6 py-4 text-sm text-gray-600">
                     {record.checkOutTime}
-                  </td>
-                  <td className="px-6 py-4 text-sm font-semibold text-gray-900">
+                  </TableCell>
+                  <TableCell className="px-6 py-4 text-sm font-semibold text-gray-900">
                     {record.workingHours}
-                  </td>
-                </tr>
+                  </TableCell>
+                </TableRow>
               ))}
-            </tbody>
-          </table>
+            </TableBody>
+          </Table>
         </div>
       </div>
     </div>

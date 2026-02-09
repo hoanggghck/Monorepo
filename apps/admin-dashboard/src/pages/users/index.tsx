@@ -1,5 +1,5 @@
 import { IconShield, IconPlus, IconUsers } from "@repo/icons";
-import { Button, Card } from "@repo/ui";
+import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
 
 export default function UsersPage() {
   const users = [
@@ -65,47 +65,46 @@ export default function UsersPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* User List */}
         <Card className="p-6 lg:col-span-2">
           <div className="flex items-center gap-2 mb-4">
             <IconUsers size={24} className="text-primary" />
-            <h2 className="text-xl font-bold text-foreground">Người Dùng</h2>
+            <h2 className="text-xl font-bold text-foreground">Danh sách người dùng</h2>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-3 px-3 font-medium text-muted-foreground">
+            <Table className="w-full text-sm">
+              <TableHeader>
+                <TableRow className="border-b border-border">
+                  <TableHead className="text-left py-3 px-3 font-medium text-muted-foreground">
                     Tên
-                  </th>
-                  <th className="text-left py-3 px-3 font-medium text-muted-foreground">
+                  </TableHead>
+                  <TableHead className="text-left py-3 px-3 font-medium text-muted-foreground">
                     Email
-                  </th>
-                  <th className="text-left py-3 px-3 font-medium text-muted-foreground">
+                  </TableHead>
+                  <TableHead className="text-left py-3 px-3 font-medium text-muted-foreground">
                     Vai Trò
-                  </th>
-                  <th className="text-left py-3 px-3 font-medium text-muted-foreground">
+                  </TableHead>
+                  <TableHead className="text-left py-3 px-3 font-medium text-muted-foreground">
                     Trạng Thái
-                  </th>
-                  <th className="text-right py-3 px-3 font-medium text-muted-foreground">
+                  </TableHead>
+                  <TableHead className="text-right py-3 px-3 font-medium text-muted-foreground">
                     Thao Tác
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
                 {users.map((user) => (
-                  <tr
+                  <TableRow
                     key={user.id}
                     className="border-b border-border hover:bg-gray-50 transition-colors"
                   >
-                    <td className="py-3 px-3 font-medium text-foreground">
+                    <TableCell className="py-3 px-3 font-medium text-foreground">
                       {user.name}
-                    </td>
-                    <td className="py-3 px-3 text-muted-foreground">
+                    </TableCell>
+                    <TableCell className="py-3 px-3 text-muted-foreground">
                       {user.email}
-                    </td>
-                    <td className="py-3 px-3">{user.role}</td>
-                    <td className="py-3 px-3">
+                    </TableCell>
+                    <TableCell className="py-3 px-3">{user.role}</TableCell>
+                    <TableCell className="py-3 px-3">
                       <span
                         className={`px-3 py-1 rounded-full text-xs font-medium ${
                           user.status === "Active"
@@ -115,16 +114,16 @@ export default function UsersPage() {
                       >
                         {user.status}
                       </span>
-                    </td>
-                    <td className="py-3 px-3 text-right">
+                    </TableCell>
+                    <TableCell className="py-3 px-3 text-right">
                       <Button variant="outline" size="sm">
                         Sửa
                       </Button>
-                    </td>
-                  </tr>
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </tbody>
-            </table>
+              </TableBody>
+            </Table>
           </div>
         </Card>
 
