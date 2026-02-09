@@ -1,9 +1,3 @@
-export enum StatusRequest {
-  Approved = "Approved",
-  Pending = "Pending",
-  UnderReview = "Under Review",
-  Rejected = "Rejected",
-}
 export interface RequestI {
   id: number;
   type: string;
@@ -11,6 +5,6 @@ export interface RequestI {
   dates?: string;
   amount?: string;
   description?: string;
-  status: StatusRequest;
+  status: string;
   submitted: string;
 }

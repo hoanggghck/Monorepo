@@ -1,4 +1,4 @@
-import { StatusRequest, type RequestI } from "@repo/types";
+import { type RequestI } from "@repo/types";
 
 export const requests: RequestI[] = [
   {
@@ -6,7 +6,7 @@ export const requests: RequestI[] = [
     type: "Leave",
     employee: "John Smith",
     dates: "2024-02-10 - 2024-02-16",
-    status: StatusRequest.Pending,
+    status: 'pending',
     submitted: "1 day ago",
   },
   {
@@ -14,7 +14,7 @@ export const requests: RequestI[] = [
     type: "Reimbursement",
     employee: "Sarah Johnson",
     amount: "$450.00",
-    status: StatusRequest.Approved,
+    status: 'approved',
     submitted: "2 days ago",
   },
   {
@@ -22,7 +22,7 @@ export const requests: RequestI[] = [
     type: "Leave",
     employee: "Michael Chen",
     dates: "2024-02-20 - 2024-02-23",
-    status: StatusRequest.Pending,
+    status: 'pending',
     submitted: "3 hours ago",
   },
   {
@@ -30,7 +30,7 @@ export const requests: RequestI[] = [
     type: "Task Assignment",
     employee: "Emily Davis",
     description: "Project Alpha - Phase 2",
-    status: StatusRequest.UnderReview,
+    status: 'underreview',
     submitted: "5 hours ago",
   },
   {
@@ -38,7 +38,7 @@ export const requests: RequestI[] = [
     type: "Reimbursement",
     employee: "Alex Rodriguez",
     amount: "$200.50",
-    status: StatusRequest.Rejected,
+    status: 'rejected',
     submitted: "1 week ago",
   },
 ];

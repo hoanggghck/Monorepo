@@ -3,21 +3,21 @@ import { ComposeTab } from "~/components/mail/ComposeTab";
 import { TemplateTab } from "~/components/mail/TemplateTab";
 import { LogTab } from "~/components/mail/LogTab";
 
-enum TAB_VALUE {
-  COMPOSE = "compose",
-  TEMPLATES = "template",
-  LOGS = "log",
-}
+// enum TAB_VALUE {
+//   COMPOSE = "compose",
+//   TEMPLATES = "template",
+//   LOGS = "log",
+// }
 type TAB_TYPE = {
   name: string;
-  key: TAB_VALUE;
+  key: "compose" | "template" | "log";
 };
 export default function EmailPage() {
-  const [tab, setTab] = useState<TAB_TYPE>({ name: "Soạn Email", key: TAB_VALUE.COMPOSE });
+  const [tab, setTab] = useState<TAB_TYPE>({ name: "Soạn Email", key: 'compose' });
   const arrTAB: TAB_TYPE[] = [
-    { name: "Soạn Email", key: TAB_VALUE.COMPOSE },
-    { name: "Mẫu", key: TAB_VALUE.TEMPLATES },
-    { name: "Nhật Ký Email", key: TAB_VALUE.LOGS },
+    { name: "Soạn Email", key: 'compose' },
+    { name: "Mẫu", key: 'template' },
+    { name: "Nhật Ký Email", key: 'log' },
   ];
   return (
     <div className="p-4 md:p-8">
@@ -47,9 +47,9 @@ export default function EmailPage() {
         ))}
       </div>
       {{
-        [TAB_VALUE.COMPOSE]: <ComposeTab />,
-        [TAB_VALUE.TEMPLATES]: <TemplateTab />,
-        [TAB_VALUE.LOGS]: <LogTab />,
+        'compose': <ComposeTab />,
+        'template': <TemplateTab />,
+        'log': <LogTab />,
       }[tab.key]}
     </div>
   )

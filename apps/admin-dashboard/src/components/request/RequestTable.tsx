@@ -1,18 +1,18 @@
-import { StatusRequest } from "@repo/types";
+// import { StatusRequest } from "@repo/types";
 import { Button, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui"
 import { requests } from "~/mock/request"
 
 export const RequestTable = () => {
   
-  const getStatusColor = (status: StatusRequest) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
-      case StatusRequest.Approved:
+      case 'approved':
         return "bg-green-100 text-green-700";
-      case StatusRequest.Pending:
+      case 'pending':
         return "bg-yellow-100 text-yellow-700";
-      case StatusRequest.UnderReview:
+      case 'undereview':
         return "bg-blue-100 text-blue-700";
-      case StatusRequest.Rejected:
+      case 'rejected':
         return "bg-red-100 text-red-700";
       default:
         return "bg-gray-100 text-gray-700";

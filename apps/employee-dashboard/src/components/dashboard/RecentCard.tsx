@@ -23,7 +23,7 @@ export const RecentCard = () => {
                 <p className="text-gray-900 font-medium text-sm">
                   {notif.message}
                 </p>
-                <p className="text-gray-500 text-xs mt-1">{notif.time}</p>
+                <p className="text-gray-500 text-xs mt-1">{notif.timestamp}</p>
               </div>
               {!notif.read && (
                 <div className="w-2 h-2 rounded-full bg-blue-500 ml-2 mt-1 flex-shrink-0"></div>
