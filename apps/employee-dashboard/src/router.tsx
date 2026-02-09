@@ -1,13 +1,14 @@
 import { createBrowserRouter } from "react-router-dom"
 import DashboardLayout from "./layouts/DashboardLayout"
-import DashboardPage from "./pages/dashboard"
-import TasksPage from "./pages/task"
-import TimeTrackingPage from "./pages/time-tracking"
-import LeavePage from "./pages/leave"
-import NotificationsPage from "./pages/notification"
+import { lazy } from "react"
+
+const DashboardPage = lazy(() => import("./pages/dashboard"));
+const TasksPage = lazy(() => import("./pages/task"));
+const LeavePage = lazy(() => import("./pages/leave"));
+const TimeTrackingPage = lazy(() => import("./pages/time-tracking"));
+const NotificationsPage = lazy(() => import("./pages/notification"));
 
 export const router = createBrowserRouter([
-  /* ================= AUTH ================= */
   {
     path: "/auth",
     element: null,
@@ -17,8 +18,6 @@ export const router = createBrowserRouter([
       { path: "switch-role", element: null },
     ],
   },
-
-  /* ================= ADMIN ================= */
   {
     path: "/",
     element: <DashboardLayout />,

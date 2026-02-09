@@ -1,15 +1,16 @@
 import { createBrowserRouter } from "react-router-dom"
-import DashboardLayout from "./layouts/DashboardLayout"
-import DashboardPage from "./pages/dashboard"
-import OrganizationPage from "./pages/organization"
-import UsersPage from "./pages/users"
-import RequestsPage from "./pages/requests"
-import WorkflowsPage from "./pages/workflows"
-import EmailPage from "./pages/email"
-import AuditPage from "./pages/audit"
+import DashboardLayout from "./layouts/DashboardLayout";
+import { lazy } from "react";
+
+const DashboardPage = lazy(() => import("./pages/dashboard"));
+const OrganizationPage = lazy(() => import("./pages/organization"));
+const UsersPage = lazy(() => import("./pages/users"));
+const RequestsPage = lazy(() => import("./pages/requests"));
+const WorkflowsPage = lazy(() => import("./pages/workflows"));
+const EmailPage = lazy(() => import("./pages/email"));
+const AuditPage = lazy(() => import("./pages/audit"));
 
 export const router = createBrowserRouter([
-  /* ================= AUTH ================= */
   {
     path: "/auth",
     element: null,
@@ -19,8 +20,6 @@ export const router = createBrowserRouter([
       { path: "switch-role", element: null },
     ],
   },
-
-  /* ================= ADMIN ================= */
   {
     path: "/",
     element: <DashboardLayout />,
@@ -33,13 +32,6 @@ export const router = createBrowserRouter([
       {
         path: "users",
         element: <UsersPage />
-      },
-      {
-        path: "roles",
-        children: [
-          { index: true, element: null },
-          { path: ":id", element: null },
-        ],
       },
       {
         path: "requests",

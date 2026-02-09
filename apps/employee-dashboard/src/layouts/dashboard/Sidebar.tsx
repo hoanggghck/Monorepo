@@ -13,7 +13,7 @@ export default function Sidebar() {
         "fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border transition-transform duration-300 ease-in-out z-40 lg:z-0 lg:static lg:translate-x-0 -translate-x-full",
       )}
     >
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full overflow-y-auto">
         <div className="p-6 border-b border-sidebar-border">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-sidebar-primary rounded-lg flex items-center justify-center">
@@ -25,7 +25,7 @@ export default function Sidebar() {
             </div>
           </div>
         </div>
-        <nav className="flex-1 overflow-y-auto px-3 py-6 space-y-2">
+        <nav className="flex-1 px-3 py-6 space-y-2">
           {SIDEBAR_ITEMS.map((item, index) => <SidebarItem key={index} item={item} />)}
         </nav>
         <div className="p-4 border-t border-sidebar-border space-y-3">

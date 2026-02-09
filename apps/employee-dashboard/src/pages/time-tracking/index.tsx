@@ -1,63 +1,8 @@
-import { IconCalendar, IconClock, IconLogIn, IconLogOut } from "@repo/icons";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
-import { useState } from "react";
+import { IconCalendar, IconClock } from "@repo/icons";
+import { CheckingTable } from "~/components/time-tracking/CheckinTable";
 
-interface CheckInRecord {
-  date: string;
-  checkInTime: string;
-  checkOutTime: string;
-  workingHours: string;
-}
 
 export default function TimeTrackingPage() {
-  const [isCheckedIn, setIsCheckedIn] = useState(true);
-  const [checkInTime] = useState("08:30 AM");
-  const [currentTime] = useState("04:15 PM");
-
-  const checkInHistory: CheckInRecord[] = [
-    {
-      date: "2024-02-09",
-      checkInTime: "08:30",
-      checkOutTime: "16:00",
-      workingHours: "7g 30p",
-    },
-    {
-      date: "2024-02-08",
-      checkInTime: "09:00",
-      checkOutTime: "17:30",
-      workingHours: "8g 30p",
-    },
-    {
-      date: "2024-02-07",
-      checkInTime: "08:15",
-      checkOutTime: "16:00",
-      workingHours: "7g 45p",
-    },
-    {
-      date: "2024-02-06",
-      checkInTime: "08:45",
-      checkOutTime: "17:00",
-      workingHours: "8g 15p",
-    },
-    {
-      date: "2024-02-05",
-      checkInTime: "09:30",
-      checkOutTime: "16:30",
-      workingHours: "7g 00p",
-    },
-    {
-      date: "2024-02-02",
-      checkInTime: "08:00",
-      checkOutTime: "17:00",
-      workingHours: "9g 00p",
-    },
-    {
-      date: "2024-02-01",
-      checkInTime: "08:30",
-      checkOutTime: "16:00",
-      workingHours: "7g 30p",
-    },
-  ];
 
   return (
     <div className="p-6 md:p-8">
@@ -70,13 +15,11 @@ export default function TimeTrackingPage() {
         <div className="text-center p-6 bg-linear-to-br from-blue-50 to-blue-100 rounded-lg">
           <IconClock className="w-8 h-8 text-blue-600 mx-auto mb-2" />
           <p className="text-gray-600 text-sm mb-2">Giờ Vào</p>
-          <p className="text-3xl font-bold text-blue-600">{checkInTime}</p>
+          <p className="text-3xl font-bold text-blue-600">"08:30 AM"</p>
         </div>
-        {isCheckedIn && (
-          <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-            <p className="text-green-800 text-sm font-medium">✓ Bạn đã chấm công vào</p>
-          </div>
-        )}
+        <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+          <p className="text-green-800 text-sm font-medium">✓ Bạn đã chấm công vào</p>
+        </div>
       </div>
       <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-200 flex items-center gap-2">
@@ -84,49 +27,7 @@ export default function TimeTrackingPage() {
           <h2 className="text-lg font-bold text-gray-900">Lịch Sử Chấm Công (7 Ngày Gần Nhất)</h2>
         </div>
         <div className="overflow-x-auto">
-          <Table className="w-full">
-            <TableHeader>
-              <TableRow className="bg-gray-50 border-b border-gray-200">
-                <TableHead className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
-                  Ngày
-                </TableHead>
-                <TableHead className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
-                  Vào
-                </TableHead>
-                <TableHead className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
-                  Ra
-                </TableHead>
-                <TableHead className="px-6 py-3 text-left text-xs font-semibold text-gray-600">
-                  Giờ Làm
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {checkInHistory.map((record, idx) => (
-                <TableRow
-                  key={idx}
-                  className="border-b border-gray-200 hover:bg-gray-50 transition-colors"
-                >
-                  <TableCell className="px-6 py-4 text-sm font-medium text-gray-900">
-                    {new Date(record.date).toLocaleDateString("vi-VN", {
-                      weekday: "short",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </TableCell>
-                  <TableCell className="px-6 py-4 text-sm text-gray-600">
-                    {record.checkInTime}
-                  </TableCell>
-                  <TableCell className="px-6 py-4 text-sm text-gray-600">
-                    {record.checkOutTime}
-                  </TableCell>
-                  <TableCell className="px-6 py-4 text-sm font-semibold text-gray-900">
-                    {record.workingHours}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+          <CheckingTable />
         </div>
       </div>
     </div>
