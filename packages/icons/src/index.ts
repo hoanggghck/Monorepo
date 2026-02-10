@@ -34,6 +34,10 @@ import {
   BarChart3,
   Zap,
   Eye,
+  Phone,
+  MapPin,
+  Cloud,
+  Code2,
 } from "lucide-react"
 
 import type { LucideIcon, LucideProps } from "lucide-react"
@@ -79,3 +83,7 @@ export const IconBriefcase = withIcon(Briefcase);
 export const IconBarChart3 = withIcon(BarChart3);
 export const IconZap = withIcon(Zap);
 export const IconEye = withIcon(Eye);
+export const IconPhone = withIcon(Phone);
+export const IconMapPin = withIcon(MapPin);
+export const IconCloud = withIcon(Cloud);
+export const IconCode2 = withIcon(Code2);
