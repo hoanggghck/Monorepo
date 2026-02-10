@@ -1,57 +1,11 @@
 import { IconArrowUpRight, IconDownload, IconEye } from "@repo/icons";
 import { Card } from "@repo/ui";
-import {
-  LineChart,
-  Line,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
 import { CardAsset, CardLiabilities, CardOwner } from "~/components/overview/card";
 import { CartDetail } from "~/components/overview/card/CartDetail";
 import { OverviewBarChart } from "~/components/overview/chart/OverviewBarChart";
 import { OverviewLineChart } from "~/components/overview/chart/OverviewLineChart";
 import { ChartWrapper } from "~/components/overview/ChartWrapper";
-import { balanceSheet } from "~/mock/overview";
-
-const quarterlyData = [
-  { quarter: "Q1 2024", revenue: 12000000, expense: 8000000, profit: 4000000 },
-  { quarter: "Q2 2024", revenue: 15000000, expense: 9500000, profit: 5500000 },
-  { quarter: "Q3 2024", revenue: 18500000, expense: 10800000, profit: 7700000 },
-  { quarter: "Q4 2024", revenue: 22000000, expense: 12500000, profit: 9500000 },
-];
-
-
-
-
-const keyRatios = [
-  {
-    label: "Tỷ suất lợi nhuận ròng",
-    value: "22%",
-    change: "+3.5%",
-    benchmark: "Tốt",
-  },
-  { label: "Tỷ suất ROE", value: "18.5%", change: "+2.1%", benchmark: "Tốt" },
-  { label: "Tỷ suất ROA", value: "14.2%", change: "+1.8%", benchmark: "Tốt" },
-  {
-    label: "Tỷ lệ Nợ/Vốn",
-    value: "0.52",
-    change: "-0.08",
-    benchmark: "Kiểm soát",
-  },
-  {
-    label: "Tỷ lệ Thanh khoản",
-    value: "2.4x",
-    change: "+0.2x",
-    benchmark: "Tốt",
-  },
-  { label: "Tỷ lệ Nhanh", value: "1.8x", change: "+0.1x", benchmark: "Tốt" },
-];
+import { balanceSheet, keyRatios, quarterlyData } from "~/mock/overview";
 
 const formatCurrency = (value: number) => {
   return new Intl.NumberFormat("vi-VN", {

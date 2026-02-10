@@ -1,14 +1,11 @@
 import { formatCurrency } from "@repo/utils";
 import {
-  LineChart,
-  Line,
   BarChart,
   Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 import { annualComparison } from "~/mock/overview";

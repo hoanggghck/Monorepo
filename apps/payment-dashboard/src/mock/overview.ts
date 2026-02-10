@@ -77,3 +77,27 @@ export const balanceSheet = {
     { name: "Lợi nhuận giữ lại", value: 5200000000 },
   ],
 };
+
+export const keyRatios = [
+  {
+    label: "Tỷ suất lợi nhuận ròng",
+    value: "22%",
+    change: "+3.5%",
+    benchmark: "Tốt",
+  },
+  { label: "Tỷ suất ROE", value: "18.5%", change: "+2.1%", benchmark: "Tốt" },
+  { label: "Tỷ suất ROA", value: "14.2%", change: "+1.8%", benchmark: "Tốt" },
+  {
+    label: "Tỷ lệ Nợ/Vốn",
+    value: "0.52",
+    change: "-0.08",
+    benchmark: "Kiểm soát",
+  },
+  {
+    label: "Tỷ lệ Thanh khoản",
+    value: "2.4x",
+    change: "+0.2x",
+    benchmark: "Tốt",
+  },
+  { label: "Tỷ lệ Nhanh", value: "1.8x", change: "+0.1x", benchmark: "Tốt" },
+];

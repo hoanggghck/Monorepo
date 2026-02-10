@@ -2,17 +2,11 @@ import { formatCurrency } from "@repo/utils";
 import {
   LineChart,
   Line,
-  BarChart,
-  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
 } from "recharts";
 import { monthlyData } from "~/mock/analyctics";
 
