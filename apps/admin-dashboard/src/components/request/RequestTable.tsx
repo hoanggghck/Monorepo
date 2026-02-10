@@ -22,7 +22,7 @@ export const RequestTable = () => {
   return (
     <Table className="w-full text-sm">
       <TableHeader>
-        <TableRow className="border-b border-border">
+        <TableRow>
           <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
             Loại
           </TableHead>
@@ -47,7 +47,6 @@ export const RequestTable = () => {
         {requests.map((request) => (
           <TableRow
             key={request.id}
-            className="border-b border-border hover:bg-gray-50 transition-colors"
           >
             <TableCell className="py-3 px-4 font-medium text-foreground">
               {request.type}

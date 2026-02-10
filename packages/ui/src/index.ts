@@ -6,7 +6,6 @@ export * from "./components/checkbox";
 export * from "./components/dropdown-menu";
 export * from "./components/input";
 export * from "./components/label";
-export * from "./components/pagination";
 export * from "./components/select";
 export * from "./components/table";
 export * from "./components/textarea";

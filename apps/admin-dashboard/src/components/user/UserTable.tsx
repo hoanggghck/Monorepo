@@ -4,9 +4,9 @@ import { users } from "~/mock/user";
 export const UserTable = () => {
   return (
     <div className="overflow-x-auto">
-      <Table className="w-full text-sm">
+      <Table className="w-full">
         <TableHeader>
-          <TableRow className="border-b border-border">
+          <TableRow>
             <TableHead className="text-left py-3 px-3 font-medium text-muted-foreground">
               Tên
             </TableHead>
@@ -28,7 +28,6 @@ export const UserTable = () => {
           {users.map((user) => (
             <TableRow
               key={user.id}
-              className="border-b border-border hover:bg-gray-50 transition-colors"
             >
               <TableCell className="py-3 px-3 font-medium text-foreground">
                 {user.name}

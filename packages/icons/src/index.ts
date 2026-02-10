@@ -25,6 +25,19 @@ import {
   Bell,
   MessageCircle,
   LogIn,
+  ArrowUpRight,
+  TrendingDown,
+  ArrowDownRight,
+  Filter,
+  Download,
+  Briefcase,
+  BarChart3,
+  Zap,
+  Eye,
+  Phone,
+  MapPin,
+  Cloud,
+  Code2,
 } from "lucide-react"
 
 import type { LucideIcon, LucideProps } from "lucide-react"
@@ -61,3 +74,16 @@ export const IconCalendar = withIcon(Calendar)
 export const IconBell = withIcon(Bell)
 export const IconMessageCircle = withIcon(MessageCircle);
 export const IconLogIn = withIcon(LogIn);
+export const IconArrowUpRight = withIcon(ArrowUpRight);
+export const IconTrendingDown = withIcon(TrendingDown);
+export const IconArrowDownRight = withIcon(ArrowDownRight);
+export const IconFilter = withIcon(Filter);
+export const IconDownload = withIcon(Download);
+export const IconBriefcase = withIcon(Briefcase);
+export const IconBarChart3 = withIcon(BarChart3);
+export const IconZap = withIcon(Zap);
+export const IconEye = withIcon(Eye);
+export const IconPhone = withIcon(Phone);
+export const IconMapPin = withIcon(MapPin);
+export const IconCloud = withIcon(Cloud);
+export const IconCode2 = withIcon(Code2);
