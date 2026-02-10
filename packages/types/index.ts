@@ -7,3 +7,5 @@ export * from "./src/activity";
 export * from "./src/leave";
 export * from "./src/task";
 export * from "./src/check-in";
+export * from "./src/payroll";
+export * from "./src/project";

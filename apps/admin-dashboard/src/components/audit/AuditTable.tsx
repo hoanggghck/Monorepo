@@ -5,7 +5,7 @@ export const AuditTable = ({ logs }: { logs: AuditI[] }) => {
   return (
     <Table className="w-full text-sm">
       <TableHeader>
-        <TableRow className="border-b border-border">
+        <TableRow>
           <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
             Người Dùng
           </TableHead>
@@ -27,7 +27,6 @@ export const AuditTable = ({ logs }: { logs: AuditI[] }) => {
         {logs.map((log) => (
           <TableRow
             key={log.id}
-            className="border-b border-border hover:bg-gray-50 transition-colors"
           >
             <TableCell className="py-3 px-4 font-medium text-foreground">
               {log.user}

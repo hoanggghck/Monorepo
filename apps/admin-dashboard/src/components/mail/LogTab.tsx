@@ -8,7 +8,7 @@ export const LogTab = () => {
       <div className="overflow-x-auto">
         <Table className="w-full text-sm">
           <TableHeader>
-            <TableRow className="border-b border-border">
+            <TableRow>
               <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">Người Nhận</TableHead>
               <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">Tiêu Đề</TableHead>
               <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">Gửi Lúc</TableHead>
@@ -18,7 +18,7 @@ export const LogTab = () => {
           </TableHeader>
           <TableBody>
             {emailLogs.map((log) => (
-              <TableRow key={log.id} className="border-b border-border hover:bg-gray-50 transition-colors">
+              <TableRow key={log.id}>
                 <TableCell className="py-3 px-4 font-medium text-foreground">{log.recipient}</TableCell>
                 <TableCell className="py-3 px-4 text-muted-foreground">{log.subject}</TableCell>
                 <TableCell className="py-3 px-4 text-muted-foreground text-xs">{log.sent}</TableCell>

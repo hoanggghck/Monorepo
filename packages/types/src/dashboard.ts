@@ -14,3 +14,13 @@ export interface ActivityLogI {
   timestamp: string;
   status: "success" | "pending" | "failed";
 }
+
+export interface DashboardDetailI {
+  title: string;
+  price?: number;
+  count?: number;
+  up: boolean;
+  msg: string;
+  bg: string;
+  sign: "dollar" | "trending" | "user"
+}

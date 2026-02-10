@@ -50,6 +50,9 @@
 
   --color-error: hsl(0 84.2% 60.2%);
   --color-error-foreground: hsl(0 0% 100%);
+  --border: var(--color-border);
+  --input: var(--color-input);
+  --ring: var(--color-ring);
 }
 
 

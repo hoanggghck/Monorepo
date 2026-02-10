@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 import { cn } from "@repo/ui/utils";
 import { Button } from "@repo/ui";
 import { IconLogOut } from "@repo/icons";
-import { useTheme } from "~/provider/theme-provider";
+import { useTheme } from "../../../../payment-dashboard/src/provider/theme-provider";
 import { SIDEBAR_ITEMS } from "./listSidebar";
 
 export default function Sidebar() {
@@ -20,8 +20,7 @@ export default function Sidebar() {
               <p className="text-white font-bold text-xs">Goldz</p>
             </div>
             <div>
-              <h1 className="font-bold text-sidebar-foreground text-lg">WorkHub</h1>
-              <p className="text-xs text-sidebar-foreground/60">Bảng Điều Khiển Nhân Viên</p>
+              <h1 className="font-bold text-sidebar-foreground text-lg">FinanceHub</h1>
             </div>
           </div>
         </div>
@@ -35,7 +34,7 @@ export default function Sidebar() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold truncate text-sidebar-foreground">Hoang Duy</p>
-              <p className="text-xs text-gray-100 capitalize">Kỹ Thuật</p>
+              <p className="text-xs text-gray-100 capitalize">Kế toán</p>
             </div>
           </div>
           <Button
