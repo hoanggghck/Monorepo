@@ -1,0 +1,5 @@
+@import "../../../packages/tailwind-config/theme.css";
+
+/* scan toàn bộ source trong monorepo */
+@source "../../../packages/*/src/**/*.{ts,tsx}";
+@source "./**/*.{ts,tsx}";

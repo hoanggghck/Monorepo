@@ -3,7 +3,7 @@ import { cn } from "@repo/ui/utils";
 import { Button } from "@repo/ui";
 import { IconLogOut } from "@repo/icons";
 import { useTheme } from "~/provider/theme-provider";
-import { SIDEBAR_ITEMS } from "./mock";
+import { SIDEBAR_ITEMS } from "./listSidebar";
 
 export default function Sidebar() {
   const { toggleTheme } = useTheme();

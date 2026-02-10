@@ -1,5 +1,7 @@
-import type { User } from '@repo/types'
-
-export function getUserLabel(user: User) {
-  return `${user.id} - ${user.name}`
-}
+export const formatCurrency = (value: number) => {
+  return new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+    minimumFractionDigits: 0,
+  }).format(value);
+};

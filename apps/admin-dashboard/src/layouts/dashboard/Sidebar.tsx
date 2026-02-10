@@ -1,6 +1,5 @@
-// src/layouts/Sidebar.tsx
 import { Link, useLocation } from "react-router-dom"
-import { SIDEBAR_ITEMS } from "./mock"
+import { SIDEBAR_ITEMS } from "./listSidebar"
 import { cn } from "@repo/ui/utils";
 import { Button } from "@repo/ui";
 import { IconLogOut } from "@repo/icons";
