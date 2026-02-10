@@ -1,4 +1,5 @@
 import { IconCheckCircle } from "@repo/icons";
+import Link from "next/link";
 
 export default function ExperienceSection() {
   const highlights = [
@@ -60,12 +61,12 @@ export default function ExperienceSection() {
                 </li>
               ))}
             </ul>
-            <a
+            <Link
               href="#contact"
               className="mt-8 inline-flex px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
             >
               Learn More
-            </a>
+            </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {services.map((service, index) => (

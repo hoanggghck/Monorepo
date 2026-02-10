@@ -1,4 +1,5 @@
 import { IconArrowUpRight } from "@repo/icons";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -13,29 +14,26 @@ export default function HeroSection() {
                 Digital Transformation Partners
               </span>
             </div>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Transform Your Business with Expert IT Solutions
             </h1>
-
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We deliver cutting-edge IT outsourcing and consulting services to help businesses accelerate digital transformation, reduce costs, and achieve sustainable growth.
             </p>
-
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:shadow-lg"
               >
                 Start Your Journey
                 <IconArrowUpRight size={20} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#services"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition-colors"
               >
                 Explore Services
-              </a>
+              </Link>
             </div>
             <div className="mt-12 grid grid-cols-3 gap-6">
               <div>

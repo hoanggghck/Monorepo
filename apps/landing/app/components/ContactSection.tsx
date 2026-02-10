@@ -3,6 +3,7 @@
 import { IconMapPin, IconSend } from "@repo/icons";
 import { IconMail, IconPhone } from "@repo/icons";
 import { useState } from "react";
+import { Button } from "@repo/ui";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -158,13 +159,13 @@ export default function ContactSection() {
                 ></textarea>
               </div>
 
-              <button
+              <Button
                 type="submit"
                 className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
               >
                 Send Message
                 <IconSend size={18} />
-              </button>
+              </Button>
             </form>
           </div>
         </div>
