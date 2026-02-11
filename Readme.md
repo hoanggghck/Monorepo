@@ -35,11 +35,14 @@ Tầm nhìn: Xây dựng một nền tảng enterprise-ready có thể mở rộ
 
 2. Project Structure & Architecture
 🧩 Applications (Domain-driven separation)
+
+```
 apps/
  ├── admin      → Governance & HR Management
  ├── employee   → Workforce Operation
  ├── payment    → Finance & Payroll
  └── landing    → Marketing & Recruitment
+```
 
 🔹 Admin App
 
