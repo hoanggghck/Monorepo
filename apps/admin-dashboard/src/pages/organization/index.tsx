@@ -1,5 +1,5 @@
-import { IconBuilding2, IconPlus } from "@repo/icons";
-import { Button, Card, Label } from "@repo/ui";
+import { IconPlus } from "@repo/icons";
+import { Button } from "@repo/ui";
 import { TitleBlock } from "~/components/common/TitleBlock";
 import { DiagramBlock } from "~/components/organization/DiagramBlock";
 import { InformationBlock } from "~/components/organization/InformationBlock";
