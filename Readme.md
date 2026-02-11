@@ -65,11 +65,13 @@ Marketing website + tuyển dụng + SEO
 → Hỗ trợ growth & branding
 
 📦 Shared Packages (Core Strength)
+```
 packages/
  ├── ui          → Shared Design System
  ├── types       → Centralized TypeScript models
  ├── utils       → Reusable hooks & helpers
  └── config      → Environment & constants
+```
 
 Kiến trúc nổi bật
 
