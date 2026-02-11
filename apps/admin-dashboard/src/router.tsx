@@ -1,6 +1,7 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createBrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import DashboardLayout from "./layouts/DashboardLayout";
-import { lazy } from "react";
+import ErrorPage from "./pages/ErrorPage";
 
 const DashboardPage = lazy(() => import("./pages/dashboard"));
 const OrganizationPage = lazy(() => import("./pages/organization"));
@@ -10,6 +11,12 @@ const WorkflowsPage = lazy(() => import("./pages/workflows"));
 const ContactPage = lazy(() => import("./pages/contact"));
 const AuditPage = lazy(() => import("./pages/audit"));
 
+const withSuspense = (Component: React.ReactNode) => (
+  <Suspense fallback={<div className="p-6">Loading...</div>}>
+    {Component}
+  </Suspense>
+);
+
 export const router = createBrowserRouter([
   {
     path: "/auth",
@@ -18,37 +25,48 @@ export const router = createBrowserRouter([
       { path: "login", element: null },
       { path: "forgot-password", element: null },
       { path: "switch-role", element: null },
+      {
+        path: "*",
+        element: <ErrorPage />
+      },
     ],
   },
   {
     path: "/",
     element: <DashboardLayout />,
+    errorElement: (
+      <ErrorPage
+        code={500}
+        title="Lỗi hệ thống"
+        message="Đã xảy ra lỗi. Vui lòng thử lại sau."
+      />
+    ),
     children: [
-      { index: true, element: <DashboardPage /> },
+      { index: true, element: withSuspense(<DashboardPage />) },
       {
         path: "organization",
-        element: <OrganizationPage />
+        element: withSuspense(<OrganizationPage />),
       },
       {
         path: "users",
-        element: <UsersPage />
+        element: withSuspense(<UsersPage />),
       },
       {
         path: "requests",
-        element: <RequestsPage />
+        element: withSuspense(<RequestsPage />),
       },
       {
         path: "workflows",
-        element: <WorkflowsPage />
+        element: withSuspense(<WorkflowsPage />),
       },
       {
         path: "contact",
-        element: <ContactPage />
+        element: withSuspense(<ContactPage />),
       },
       {
         path: "audit",
-        element: <AuditPage />
-      },
+        element: withSuspense(<AuditPage />),
+      }
     ],
   },
-])
+]);
