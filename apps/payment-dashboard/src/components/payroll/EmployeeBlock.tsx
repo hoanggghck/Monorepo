@@ -1,7 +1,7 @@
 import { Button, Card, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
 import { formatCurrency } from "@repo/utils";
 import { mockEmployees } from "~/mock/payroll";
-import { IconDownload, IconPlus, IconSearch } from "@repo/icons";
+import { IconDownload, IconPlus } from "@repo/icons";
 
 const statusColors = {
   paid: { bg: "bg-green-50 dark:bg-green-950/30", text: "text-green-700 dark:text-green-300" },
@@ -87,36 +87,28 @@ export const EmployeeTable = () => {
 export const EmployeeBlock = () => {
   return (
     <Card className="md:p-0">
-      <div className="flex flex-wrap items-center justify-between mb-6 p-4 border-b border-gray-100">
-        <div className="flex flex-wrap gap-6">
-          <div className="relative">
-            <IconSearch className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Tìm kiếm nhân viên..."
-              className="md:w-100 rounded-lg border border-border bg-background py-2 pl-9 pr-4 text-sm placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 sm:w-64"
-            />
-          </div>
-          <div className="w-60">
-            <Select>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Chọn một nhóm..." />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Tất cả Trạng thái</SelectItem>
-                <SelectItem value="paid">Đã thanh toán</SelectItem>
-                <SelectItem value="pending">Chờ xử lý</SelectItem>
-                <SelectItem value="processing">Đang xử lý</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-6">
-          <Button className="text-primary" variant={"outline"}>
+      <div className="grid lg:grid-cols-3 gap-3 mb-6 p-4 border-b border-gray-100">
+        <Input
+          type="text"
+          placeholder="Tìm kiếm theo tên nhân viên..."
+        />
+        <Select>
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Chọn một nhóm..." />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Tất cả Trạng thái</SelectItem>
+            <SelectItem value="paid">Đã thanh toán</SelectItem>
+            <SelectItem value="pending">Chờ xử lý</SelectItem>
+            <SelectItem value="processing">Đang xử lý</SelectItem>
+          </SelectContent>
+        </Select>
+        <div className="flex flex-wrap gap-6 justify-end">
+          <Button className="w-30" variant={"outline"}>
             <IconDownload className="h-4 w-4" />
             Xuất
           </Button>
-          <Button>
+          <Button className="w-30">
             <IconPlus className="h-4 w-4" />
             Nhân viên
           </Button>

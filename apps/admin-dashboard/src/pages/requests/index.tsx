@@ -13,9 +13,9 @@ export default function RequestsPage() {
           Yêu Cầu Mới
         </Button>
       </TitleBlock>
-      <div className="flex flex-wrap gap-4 mb-5">
+      <div className="grid lg:grid-cols-3 gap-5 mb-5">
         <Select>
-          <SelectTrigger className="w-50">
+          <SelectTrigger>
             <SelectValue placeholder="Chọn danh mục" />
           </SelectTrigger>
           <SelectContent>
@@ -26,7 +26,7 @@ export default function RequestsPage() {
           </SelectContent>
         </Select>
         <Select>
-          <SelectTrigger className="w-50">
+          <SelectTrigger>
             <SelectValue placeholder="Chọn trạng thái" />
           </SelectTrigger>
           <SelectContent>
@@ -40,7 +40,6 @@ export default function RequestsPage() {
         <Input
           type="text"
           placeholder="Tìm kiếm theo tên nhân viên..."
-          className="flex-1"
         />
       </div>
       <RequestBlock />
