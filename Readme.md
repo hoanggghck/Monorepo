@@ -169,7 +169,7 @@ Build toàn hệ thống:
 
 pnpm build
 
-🎯 Why This Project Represents Senior-Level Frontend
+🎯
 
 Kiến trúc monorepo thực tế, không demo toy project
 
@@ -187,5 +187,3 @@ Thiết kế Design System có thể reuse production
 
 Senior Frontend Engineer (6+ years)
 Focused on scalable architecture, domain-driven frontend design & enterprise systems.
-
-Nếu bạn muốn, tôi có thể viết thêm một bản README “ngắn hơn nữa” (phiên bản 1 trang súc tích kiểu portfolio) để bạn dùng khi apply job Senior/Lead frontend.
