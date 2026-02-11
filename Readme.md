@@ -1,226 +1,94 @@
-🏗️ Monorepo Architecture – Enterprise Workforce & Finance Platform
-📋 Project Overview
+🏗 Enterprise Workforce & Finance Platform – Monorepo Architecture
+1. Vision & Why Monorepo?
 
-Monorepo chứa 4 ứng dụng React độc lập phục vụ quản lý vận hành doanh nghiệp IT Consulting bao gồm:
+Đây là một nền tảng quản lý vận hành dành cho doanh nghiệp IT Consulting, bao gồm quản lý nhân sự, dự án, chấm công, payroll, tài chính và marketing tuyển dụng.
 
-Workforce Management
+🎯 Vấn đề đặt ra
 
-Project & Task Management
+Khi doanh nghiệp phát triển:
 
-Payroll & Finance Management
+Nhiều hệ thống rời rạc (HR, Task, Finance, Marketing)
 
-Corporate Marketing & Recruitment Website
+Trùng lặp logic & UI giữa các ứng dụng
 
-Kiến trúc hướng tới:
+Khó maintain type consistency
 
-Scalability
+Khó scale team & kiến trúc
 
-Reusable shared packages
+Deployment & dependency phức tạp
 
-Clear domain separation
+🚀 Giải pháp
 
-Enterprise-ready frontend architecture
+Áp dụng Monorepo Architecture (Turborepo + pnpm workspace) để:
 
-🎯 Applications
-1️⃣ Admin App (apps/admin)
+Chia domain rõ ràng theo business boundaries
 
-Ứng dụng dành cho Ban quản trị / HR / Quản lý cấp cao
+Tái sử dụng design system & business logic
 
-Core Features
-📊 Dashboard & Analytics
+Đồng bộ type giữa toàn hệ thống
 
-Thống kê nhân sự
+Tối ưu performance build bằng turbo caching
 
-Thống kê lương
+Dễ scale thành multi-tenant SaaS trong tương lai
 
-KPI tổng quan công ty
+Tầm nhìn: Xây dựng một nền tảng enterprise-ready có thể mở rộng thành hệ sinh thái quản lý doanh nghiệp toàn diện.
 
-Theo dõi tiến độ dự án
+2. Project Structure & Architecture
+🧩 Applications (Domain-driven separation)
+apps/
+ ├── admin      → Governance & HR Management
+ ├── employee   → Workforce Operation
+ ├── payment    → Finance & Payroll
+ └── landing    → Marketing & Recruitment
 
-Báo cáo vận hành
+🔹 Admin App
 
-👨‍💼 Employee & Role Management
+Quản lý nhân sự, dự án, KPI, audit log, request workflow
+→ Định vị là trung tâm điều hành hệ thống
 
-Quản lý nhân viên
+🔹 Employee App
 
-Quản lý phòng ban
+Task management, leave request, time tracking, notification
+→ Giúp công ty quản lý nhân viên một cách tối ưu thông qua các chức năng đc tích hợp
 
-Quản lý cấp bậc
+🔹 Payment App
 
-Phân quyền hệ thống
+Payroll, project finance, analytics, revenue tracking
+→ Giúp công ty quản lý về thu, chi cũng như tạo ra hoạc định cho việc sử dụng chi phí hợp lí
 
-🗂 Project Management
+🔹 Landing
 
-Quản lý dự án
+Marketing website + tuyển dụng + SEO
+→ Hỗ trợ growth & branding
 
-Phân công nhân sự
-
-Theo dõi tiến độ
-
-Quản lý ngân sách dự án
-
-📩 Request Management
-
-Tạo và duyệt request nội bộ
-
-Workflow xử lý yêu cầu
-
-📧 Email Management
-
-Gửi email nội bộ
-
-Gửi email khách hàng
-
-Template email
-
-🧾 Audit Log
-
-Nhật ký hoạt động hệ thống
-
-Theo dõi thay đổi dữ liệu
-
-Kiểm soát bảo mật
-
-2️⃣ Employee App (apps/employee)
-
-Ứng dụng dành cho Nhân viên công ty
-
-Core Features
-📅 Leave Management
-
-Tạo đơn xin nghỉ phép
-
-Theo dõi trạng thái duyệt
-
-Lịch nghỉ cá nhân
-
-✅ Task Management
-
-Danh sách công việc
-
-Theo dõi tiến độ
-
-Comment & collaboration
-
-Deadline tracking
-
-⏱ Time Tracking
-
-Chấm công
-
-Tracking thời gian làm việc
-
-Báo cáo giờ làm theo dự án
-
-🔔 Notification System
-
-Thông báo hệ thống
-
-Thông báo task
-
-Thông báo request
-
-3️⃣ Payment / Finance App (apps/payment)
-
-Ứng dụng dành cho Kế toán & Quản lý tài chính
-
-Core Features
-💰 Payroll Management
-
-Quản lý bảng lương nhân viên
-
-Tính lương theo cấp bậc / hiệu suất
-
-Thưởng / phạt
-
-Xuất báo cáo lương
-
-📁 Project Financial Management
-
-Theo dõi chi phí dự án
-
-Doanh thu dự án
-
-Lợi nhuận từng dự án
-
-📈 Business Analytics
-
-Thống kê tăng trưởng doanh nghiệp
-
-Phân tích thu chi
-
-Theo dõi biến động tài chính
-
-🏦 Company Finance Overview
-
-Số dư công ty
-
-Thặng dư / thâm hụt
-
-Báo cáo tài chính theo quý / năm
-
-4️⃣ Landing Page (apps/landing)
-
-Website marketing & tuyển dụng cho công ty IT Consulting
-
-Core Features
-🌐 Corporate Marketing
-
-Giới thiệu công ty
-
-Showcase dịch vụ
-
-Portfolio dự án
-
-Giới thiệu đội ngũ
-
-💼 Recruitment
-
-Trang tuyển dụng
-
-Danh sách vị trí mở
-
-Form ứng tuyển
-
-📢 SEO & Branding
-
-Landing pages tối ưu SEO
-
-Blog / Tech sharing
-
-Lead generation
-
-📦 Shared Packages Structure
+📦 Shared Packages (Core Strength)
 packages/
-├── ui/            # Shared UI Design System
-├── utils/         # Utility & reusable hooks
-├── api-client/    # API service layer
-├── auth/          # Authentication & permission logic
-├── config/        # Shared config & constants
-└── types/         # Shared TypeScript models
+ ├── ui          → Shared Design System
+ ├── types       → Centralized TypeScript models
+ ├── utils       → Reusable hooks & helpers
+ └── config      → Environment & constants
 
-🏗️ Complete Folder Structure
-monorepo-project/
-├── apps/
-│   ├── admin/
-│   ├── employee/
-│   ├── payment/
-│   └── landing/
-│
-├── packages/
-│   ├── ui/
-│   ├── utils/
-│   ├── api-client/
-│   ├── auth/
-│   ├── config/
-│   └── types/
+Kiến trúc nổi bật
 
-🔧 Technology Stack
+Domain-based separation
+
+Feature-based folder structure
+
+Service layer abstraction
+
+Centralized type system
+
+Role-based access control (RBAC)
+
+Atomic Design System
+
+🛠 Tech Stack
+
 Core
 
-React 18+
+React 19
 
-TypeScript
+TypeScript (strict mode)
 
 Vite
 
@@ -228,15 +96,9 @@ Turborepo
 
 pnpm workspace
 
-State Management
+State & Data
 
-Zustand – Global UI state
-
-TanStack Query – Server state
-
-React Hook Form – Form management
-
-Styling
+UI
 
 TailwindCSS
 
@@ -244,189 +106,86 @@ Shared Design System
 
 Lucide Icons
 
-Data Layer
+3. Engineering Mindset & Scalability Strategy
 
-Axios
+Điểm tôi tập trung khi xây dựng dự án này không chỉ là feature, mà là:
 
-Service-based API architecture
+🧠 1. Architecture for Scale
 
-Zod validation
+Chuẩn hóa dependency graph
 
-Testing
+Tách domain rõ ràng để tránh coupling
 
-Vitest
+Dễ mở rộng thành:
 
-React Testing Library
+Multi-tenant SaaS
 
-Playwright
+Mobile app
 
-🧠 Architecture Patterns
-🧩 Domain-based App Separation
-Admin      → Governance & HR Management
-Employee   → Workforce Operation
-Payment    → Finance & Payroll
-Landing    → Marketing & Recruitment
+Public API ecosystem
 
-🔗 Dependency Graph
-apps/admin
-apps/employee
-apps/payment
-apps/landing
-      │
-      └── shared packages
-            ├── ui
-            ├── api-client
-            ├── auth
-            ├── utils
-            ├── config
-            └── types
+⚡ 2. Performance-first
 
-🧱 Feature-based Architecture
-src/
- ├── pages/
- ├── features/
- ├── components/
- ├── hooks/
- ├── services/
- └── routes/
+Turbo caching
 
-🔐 Authentication & Authorization
-JWT Authentication
+Route-based code splitting
 
-Access Token
+Lazy loading
 
-Refresh Token
+React Query caching strategy
 
-Role-based Access
+🔐 3. Enterprise Security
 
-Role System
-Admin
-Manager
-Employee
-Finance
+JWT + Refresh Token flow
 
-💼 Business Flow Overview
-Employee Lifecycle
-Admin tạo nhân viên
-        ↓
-Employee sử dụng hệ thống
-        ↓
-Employee tạo task / chấm công
-        ↓
-Payment app xử lý payroll
-        ↓
-Admin theo dõi báo cáo tổng
+Role-based permission guard
 
-Project Finance Flow
-Admin tạo dự án
-       ↓
-Employee làm task & tracking time
-       ↓
-Payment app tính chi phí & lợi nhuận
-       ↓
-Analytics & reporting
+Input validation
 
-🎨 Design System
-Component Levels
+Environment isolation
 
-Atoms
+📈 4. Business-aware Frontend
 
-Molecules
+Thiết kế dựa trên business flow thực tế:
 
-Organisms
+Employee → Task/Time Tracking → Payroll → Financial Analytics → Executive Dashboard
 
-Templates
+Frontend không chỉ là UI, mà là hệ thống phản ánh logic vận hành doanh nghiệp.
 
-Pages
-
-🚀 Development Workflow
-Setup
+🚀 Development
 pnpm install
 pnpm dev
 
-Run Specific App
+
+Chạy từng app:
+
 pnpm --filter admin dev
 pnpm --filter employee dev
 pnpm --filter payment dev
 pnpm --filter landing dev
 
-Build
+
+Build toàn hệ thống:
+
 pnpm build
 
-📊 Performance Optimization
+🎯 Why This Project Represents Senior-Level Frontend
 
-Turbo caching
+Kiến trúc monorepo thực tế, không demo toy project
 
-Route code splitting
+Domain modeling theo business
 
-Lazy loading
+Type-safe cross-application architecture
 
-React Query caching
+Tư duy scalable SaaS platform
 
-🔒 Security
+Tối ưu DX & performance
 
-JWT + Refresh Token
+Thiết kế Design System có thể reuse production
 
-Role permission guard
+👨‍💻 Author
 
-Input validation
+Senior Frontend Engineer (6+ years)
+Focused on scalable architecture, domain-driven frontend design & enterprise systems.
 
-Environment config isolation
-
-🗺️ Deployment Strategy
-Domain Structure
-company.com            → Landing
-admin.company.com      → Admin
-employee.company.com   → Employee
-finance.company.com    → Payment
-
-📈 Future Roadmap
-Phase 1 – Core Platform
-
-Workforce Management
-
-Task Tracking
-
-Payroll Management
-
-Phase 2 – Advanced Enterprise
-
-Multi-tenant
-
-Advanced analytics
-
-Workflow automation
-
-Notification center
-
-Phase 3 – Ecosystem
-
-Mobile App
-
-Public API
-
-Third-party integration
-
-🎉 Benefits
-Developer
-
-Clear domain separation
-
-Reusable shared packages
-
-Scalable architecture
-
-Strong type safety
-
-Business
-
-Centralized workforce management
-
-Financial transparency
-
-Scalable IT consulting platform
-
-🧑‍💻 Author
-
-Frontend Monorepo Enterprise Platform
-Built with modern scalable architecture.
+Nếu bạn muốn, tôi có thể viết thêm một bản README “ngắn hơn nữa” (phiên bản 1 trang súc tích kiểu portfolio) để bạn dùng khi apply job Senior/Lead frontend.
