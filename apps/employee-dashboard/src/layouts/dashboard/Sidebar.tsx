@@ -35,10 +35,10 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
               </div>
               <div>
                 <h1 className="font-bold text-sidebar-foreground text-lg">
-                  AdminHub
+                  WorkHub
                 </h1>
                 <p className="text-xs text-sidebar-foreground/60">
-                  Cổng Thông Tin HR
+                  Bảng Điều Khiển Nhân Viên
                 </p>
               </div>
             </div>
@@ -58,10 +58,10 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
           <div className="p-4 border-t border-sidebar-border space-y-3">
             <div className="px-4 py-3 bg-sidebar-accent rounded-lg">
               <p className="text-sm font-medium text-sidebar-accent-foreground">
-                Người Dùng Quản Trị
+                Hoang Duy
               </p>
               <p className="text-xs text-sidebar-accent-foreground/70">
-                system@company.com
+                Kỹ Thuật
               </p>
             </div>
             <Button
