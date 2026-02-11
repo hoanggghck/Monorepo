@@ -87,20 +87,78 @@ Role-based access control (RBAC)
 
 Atomic Design System
 
-🛠 Tech Stack
+# 🛠 Tech Stack
 
-```
-React 19
-TypeScript (strict mode)
-Vite
-Turborepo
-pnpm workspace
-State & Data
-UI
-TailwindCSS
-Shared Design System
-Lucide Icons
-```
+## 🧱 Monorepo & Build System
+
+- **pnpm (workspace)** – Dependency management
+- **Turborepo** – Task orchestration & caching
+- **TypeScript 5.9+** – Strict type-safe development
+- **Vite (Rolldown Vite override)** – SPA build tool
+- **Next.js 16** – Landing / SSR application
+- **PostCSS + Autoprefixer**
+- **TailwindCSS v4**
+
+---
+
+## ⚛️ Core Frontend
+
+- **React 19**
+- **React DOM 19**
+- **React Router DOM v7** (SPA routing)
+- **Next.js App Router** (Landing)
+
+---
+
+## 🎨 UI System & Design Architecture
+
+- **Radix UI**
+  - Checkbox
+  - Dropdown Menu
+  - Label
+  - Popover
+  - Select
+  - Tabs
+  - Slot
+- **class-variance-authority (CVA)** – Variant-driven component design
+- **clsx** – Conditional class handling
+- **tailwind-merge** – Conflict-safe Tailwind merging
+- **Framer Motion** – Animation system
+- **Lucide React** – Icon system
+- **react-day-picker** – Date picker
+- Internal Design System (`@repo/ui`)
+
+---
+
+## 🧩 Internal Shared Packages (Workspace)
+
+- `@repo/ui` – Shared design system
+- `@repo/types` – Centralized TypeScript models
+- `@repo/utils` – Reusable hooks & helpers
+- `@repo/icons` – Shared icon layer
+- `@repo/tailwind-config` – Shared Tailwind configuration
+
+---
+
+## 🛠 Developer Experience & Code Quality
+
+- **ESLint 9**
+- **typescript-eslint**
+- **eslint-plugin-react-hooks**
+- **eslint-plugin-react-refresh**
+- **eslint-config-next**
+- **@vitejs/plugin-react**
+
+---
+
+## 🏗 Architecture Characteristics
+
+- Workspace-based shared packages
+- Strict TypeScript enforcement across apps
+- UI abstraction via internal design system
+- Variant-driven styling system (CVA + Tailwind v4)
+- Cross-app dependency control through pnpm workspace
+- Turbo-powered incremental builds
 3. Engineering Mindset & Scalability Strategy
 
 Điểm tôi tập trung khi xây dựng dự án này không chỉ là feature, mà là:
