@@ -46,8 +46,8 @@ export const NotificationCard = ({notif, setNotifications}: PageProps) => {
   return (
     <Card
       className={cn(
-        "p-5 cursor-pointer",
-        !notif.read && "border-blue-200 bg-blue-50"
+        "cursor-pointer",
+        !notif.read && "border-blue-200 bg-blue-50 hover:border-blue-200"
       )}
       onClick={() => !notif.read && handleMarkAsRead(notif.id)}
     >
@@ -81,7 +81,7 @@ export const NotificationCard = ({notif, setNotifications}: PageProps) => {
               e.stopPropagation();
               handleDelete(notif.id);
             }}
-            className="bg-error text-white hover:bg-error-hover"
+            className="bg-error text-white hover:bg-error-hover p-2"
             size="icon"
           >
             <IconX className="w-4 h-4" />

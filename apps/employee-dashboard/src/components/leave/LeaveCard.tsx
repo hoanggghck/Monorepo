@@ -50,12 +50,12 @@ export const LeaveCard = () => {
     }
   };
   return (
-    <Card className="border-gray-200 overflow-hidden">
-      <div className="px-6 py-4 border-b border-gray-200 flex items-center gap-2">
+    <div>
+      <div className="mb-6 flex items-center gap-2">
       <IconCalendar className="w-5 h-5 text-blue-500" />
       <h2 className="text-lg font-bold text-gray-900">Đơn Xin Nghỉ</h2>
     </div>
-    <div className="divide-y divide-gray-200">
+    <Card className="divide-y divide-gray-200 md:p-0">
       {leaveRequests.map((request) => (
         <div key={request.id} className="px-6 py-4 hover:bg-gray-50 transition-colors">
           <div className="flex items-start justify-between mb-2">
@@ -86,7 +86,7 @@ export const LeaveCard = () => {
           </div>
         </div>
       ))}
-    </div>
-  </Card>
+    </Card>
+  </div>
   )
 }

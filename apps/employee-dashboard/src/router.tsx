@@ -3,7 +3,7 @@ import DashboardLayout from "./layouts/DashboardLayout"
 import { lazy } from "react"
 
 const DashboardPage = lazy(() => import("./pages/dashboard"));
-const TasksPage = lazy(() => import("./pages/task"));
+const TasksPage = lazy(() => import("./pages/tasks"));
 const LeavePage = lazy(() => import("./pages/leave"));
 const TimeTrackingPage = lazy(() => import("./pages/time-tracking"));
 const NotificationsPage = lazy(() => import("./pages/notification"));

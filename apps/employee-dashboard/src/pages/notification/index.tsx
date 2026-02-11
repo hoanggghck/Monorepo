@@ -2,6 +2,7 @@ import { IconBell } from "@repo/icons";
 import type { NotificationI } from "@repo/types";
 import { Button } from "@repo/ui";
 import { useState } from "react";
+import { TitleBlock } from "~/components/common/TitleBlock";
 import { NotificationCard } from "~/components/notification/NotificationCard";
 import { mockNotification } from "~/mock/notification";
 
@@ -17,20 +18,17 @@ export default function NotificationsPage() {
   };
 
   return (
-    <div className="p-6 md:p-8">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Thông Báo</h1>
-          <p className="text-gray-500 mt-1">
-            Bạn có {unreadCount} thông báo chưa đọc
-          </p>
-        </div>
+    <>
+      <TitleBlock 
+        title="Thông Báo" 
+        description={`Bạn có ${unreadCount} thông báo chưa đọc`}
+      >
         {unreadCount > 0 && (
           <Button onClick={handleMarkAllAsRead}>
             Đánh dấu tất cả là đã đọc
           </Button>
         )}
-      </div>
+      </TitleBlock>
       <div className="space-y-3">
         {notifications.length > 0 ? (
           notifications.map((notif) => (
@@ -43,6 +41,6 @@ export default function NotificationsPage() {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }

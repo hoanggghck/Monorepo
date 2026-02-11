@@ -10,7 +10,7 @@ export default function AuditPage() {
  
   return (
     <>
-      <TitleBlock title="text-3xl font-bold text-foreground" description="text-muted-foreground mt-2" />
+      <TitleBlock title="Nhật Ký Kiểm Toán" description="Theo dõi tất cả các hoạt động hệ thống và hành động của người dùng để tuân thủ và bảo mật." />
       <div className="flex flex-wrap gap-6 mb-5">
         <Input
           type="text"

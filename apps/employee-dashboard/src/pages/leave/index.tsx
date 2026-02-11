@@ -1,24 +1,22 @@
 import { IconPlus } from "@repo/icons";
 import { Button, Card, cn } from "@repo/ui";
+import { TitleBlock } from "~/components/common/TitleBlock";
 import { LeaveCard } from "~/components/leave/LeaveCard";
 import { listStatusLeave } from "~/mock/leave";
 
 export default function LeavePage() {
 
   return (
-    <div className="p-6 md:p-8">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Quản Lý Nghỉ Phép</h1>
-          <p className="text-gray-500 mt-1">
-            Quản lý đơn xin nghỉ và xem lịch sử
-          </p>
-        </div>
+    <>
+      <TitleBlock 
+        title="Quản Lý Nghỉ Phép" 
+        description="Quản lý đơn xin nghỉ và xem lịch sử"
+      >
         <Button>
           <IconPlus className="w-5 h-5" />
           Đơn Xin Mới
         </Button>
-      </div>
+      </TitleBlock>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         {listStatusLeave.map((leave, index) => (
           <Card className="p-6" key={index}>
@@ -31,6 +29,6 @@ export default function LeavePage() {
         ))}
       </div>
       <LeaveCard />
-    </div>
+    </>
   );
 }

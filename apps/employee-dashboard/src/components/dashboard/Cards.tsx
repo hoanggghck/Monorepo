@@ -4,7 +4,7 @@ import { notifications, todaysTasks, user, userStatus } from "~/mock/dashboard"
 
 export const EmployeeCard = () => {
   return (
-    <Card className="p-6">
+    <Card>
       <div className="flex items-center justify-between">
         <div>
           <p className="text-gray-600 text-sm font-medium">Tên</p>
@@ -23,7 +23,7 @@ export const EmployeeCard = () => {
 
 export const StatusCard = () => {
   return (
-    <Card className="p-6">
+    <Card>
       <p className="text-gray-600 text-sm font-medium mb-3">
         Trạng Thái Chấm Công
       </p>
@@ -60,7 +60,7 @@ export const StatusCard = () => {
 
 export const TaskCard = () => {
   return (
-    <Card className="p-6">
+    <Card>
       <p className="text-gray-600 text-sm font-medium mb-3">
       Công Việc Hôm Nay
     </p>
@@ -90,7 +90,7 @@ export const TaskCard = () => {
 
 export const NotificationCard = () => {
   return (
-    <Card className="p-6">
+    <Card>
     <p className="text-gray-600 text-sm font-medium mb-3">Thông Báo</p>
     <div className="space-y-2">
       <div className="flex items-center gap-2">
