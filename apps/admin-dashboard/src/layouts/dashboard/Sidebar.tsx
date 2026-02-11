@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 import { SIDEBAR_ITEMS } from "./listSidebar"
 import { cn } from "@repo/ui/utils";
 import { Button } from "@repo/ui";
-import { IconLogOut, IconX } from "@repo/icons";
+import { IconX } from "@repo/icons";
 import { useTheme } from "~/provider/theme-provider";
 
 interface SidebarProps {
@@ -50,15 +50,11 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
               <IconX />
             </Button>
           </div>
-
-          {/* NAV */}
           <nav className="flex-1 px-3 py-6 space-y-2">
             {SIDEBAR_ITEMS.map((item, index) => (
               <SidebarItem key={index} item={item} />
             ))}
           </nav>
-
-          {/* FOOTER */}
           <div className="p-4 border-t border-sidebar-border space-y-3">
             <div className="px-4 py-3 bg-sidebar-accent rounded-lg">
               <p className="text-sm font-medium text-sidebar-accent-foreground">
@@ -68,7 +64,6 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
                 system@company.com
               </p>
             </div>
-
             <Button
               variant="ghost"
               className="w-full justify-start gap-3 text-sidebar-foreground hover:bg-sidebar-accent"

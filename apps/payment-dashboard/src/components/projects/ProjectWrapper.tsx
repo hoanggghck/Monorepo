@@ -23,35 +23,33 @@ const statusColors = {
 
 export const ProjectWrapper = () => {
   return (
-    <Card className="md:p-0">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-border p-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-          <div className="relative">
-            <IconSearch className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Tìm kiếm dự án..."
-              className="w-full rounded-lg border border-border bg-background py-2 pl-9 pr-4 text-sm placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 sm:w-64"
-            />
-          </div>
-          <div className="w-50">
-            <Select>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Chọn một nhóm..." />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Tất cả Trạng thái</SelectItem>
-                <SelectItem value="ongoing">Đang thực hiện</SelectItem>
-                <SelectItem value="completed">Hoàn thành</SelectItem>
-                <SelectItem value="on-hold">Tạm dừng</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+    <Card className="p-0 md:p-0">
+      <div className="grid md:grid-cols-3 gap-4 border-b border-border p-4">
+        <div className="relative w-full">
+          <IconSearch className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            type="text"
+            placeholder="Tìm kiếm dự án..."
+            className="pl-9"
+          />
         </div>
-        <Button className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90">
-          <IconPlus className="h-4 w-4" />
-          Dự Án Mới
-        </Button>
+        <Select>
+          <SelectTrigger>
+            <SelectValue placeholder="Chọn một nhóm..." />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Tất cả Trạng thái</SelectItem>
+            <SelectItem value="ongoing">Đang thực hiện</SelectItem>
+            <SelectItem value="completed">Hoàn thành</SelectItem>
+            <SelectItem value="on-hold">Tạm dừng</SelectItem>
+          </SelectContent>
+        </Select>
+        <div className="flex justify-end">
+          <Button className="w-30">
+            <IconPlus className="h-4 w-4" />
+            Dự Án Mới
+          </Button>
+        </div>
       </div>
       <div className="space-y-4 p-4">
         {mockProjects.map((project) => {
