@@ -89,28 +89,18 @@ Atomic Design System
 
 🛠 Tech Stack
 
-Core
-
+```
 React 19
-
 TypeScript (strict mode)
-
 Vite
-
 Turborepo
-
 pnpm workspace
-
 State & Data
-
 UI
-
 TailwindCSS
-
 Shared Design System
-
 Lucide Icons
-
+```
 3. Engineering Mindset & Scalability Strategy
 
 Điểm tôi tập trung khi xây dựng dự án này không chỉ là feature, mà là:
