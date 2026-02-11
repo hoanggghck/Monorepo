@@ -24,7 +24,7 @@ export const WorkflowCard = ({ workflow }: { workflow: any }) => {
           {workflow.status}
         </span>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+      <div className="flex flex-wrap justify-between gap-4 mb-4">
         <div>
           <label className="text-xs text-muted-foreground">Bước</label>
           <p className="text-lg font-semibold text-foreground">{workflow.steps}</p>

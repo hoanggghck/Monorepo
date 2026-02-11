@@ -1,7 +1,10 @@
 import { IconCheckCircle, IconClock } from "@repo/icons"
+import { Button, Card } from "@repo/ui"
+import { Link } from "react-router-dom"
+import { activities } from "~/mock/dashboard"
 import type { ActivityLogI } from "@repo/types"
 
-export const ActivityRecent = ({ activity }: { activity: ActivityLogI }) => {
+const RecentActivity = ({ activity }: { activity: ActivityLogI }) => {
   return (
     <div
       className="flex items-start gap-4 pb-4 border-b border-border last:border-b-0 last:pb-0"
@@ -29,5 +32,32 @@ export const ActivityRecent = ({ activity }: { activity: ActivityLogI }) => {
         </p>
       </div>
     </div>
+  )
+}
+
+export const RecentActivityWrapper = () => {
+  return (
+    <Card>
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h2 className="text-xl font-bold text-foreground">
+            Hoạt Động Gần Đây
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Xem trước nhật ký kiểm toán
+          </p>
+        </div>
+        <Link to="/audit">
+          <Button variant="outline" size="sm">
+            Xem Tất Cả
+          </Button>
+        </Link>
+      </div>
+      <div className="space-y-4">
+        {activities.map((activity) => (
+          <RecentActivity key={activity.id} activity={activity} />
+        ))}
+      </div>
+    </Card>
   )
 }

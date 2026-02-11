@@ -1,7 +1,9 @@
-import type { AuditI } from "@repo/types";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
+import { IconBookMarked } from "@repo/icons";
+import { Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
+import { AUDIT_ACTION_COLOR, AUDIT_ACTION_LABEL, auditLogs } from "~/mock/audit";
 
-export const AuditTable = ({ logs }: { logs: AuditI[] }) => {
+const AuditTable = () => {
+  
   return (
     <Table className="w-full text-sm">
       <TableHeader>
@@ -24,7 +26,7 @@ export const AuditTable = ({ logs }: { logs: AuditI[] }) => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {logs.map((log) => (
+        {auditLogs.map((log) => (
           <TableRow
             key={log.id}
           >
@@ -32,8 +34,9 @@ export const AuditTable = ({ logs }: { logs: AuditI[] }) => {
               {log.user}
             </TableCell>
             <TableCell className="py-3 px-4">
-              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">
-                {log.action}
+              <span className={`inline-block px-3 py-1 rounded text-xs font-medium
+                ${AUDIT_ACTION_COLOR[log.action]}`}>
+                {AUDIT_ACTION_LABEL[log.action]}
               </span>
             </TableCell>
             <TableCell className="py-3 px-4 text-muted-foreground text-sm">
@@ -52,5 +55,28 @@ export const AuditTable = ({ logs }: { logs: AuditI[] }) => {
         ))}
       </TableBody>
     </Table>
+  )
+}
+
+export const TableBlock = () => {
+  return (
+    <Card>
+      <div className="flex items-center gap-2 mb-6">
+        <IconBookMarked size={24} className="text-primary" />
+        <h2 className="text-xl font-bold text-foreground">
+          Nhật Ký Hoạt Động ({auditLogs.length})
+        </h2>
+      </div>
+      <div className="overflow-x-auto">
+        <AuditTable />
+      </div>
+      {auditLogs.length === 0 && (
+        <div className="text-center py-12">
+          <p className="text-muted-foreground">
+            Không có nhật ký kiểm toán nào phù hợp với bộ lọc của bạn.
+          </p>
+        </div>
+      )}
+    </Card>
   )
 }
