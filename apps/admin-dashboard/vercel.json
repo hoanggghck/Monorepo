@@ -1,4 +1,6 @@
 {
-  "buildCommand": "pnpm run build",
-  "outputDirectory": "dist"
+  "buildCommand": "cd ../.. && pnpm build --filter=admin-app",
+  "outputDirectory": "dist",
+  "installCommand": "pnpm install",
+  "framework": "vite"
 }

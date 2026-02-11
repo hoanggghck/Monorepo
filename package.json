@@ -4,7 +4,11 @@
   "packageManager": "pnpm@9.15.1",
   "scripts": {
     "dev": "turbo run dev",
-    "build": "pnpm -r build"
+    "build": "pnpm -r build",
+    "build:admin": "turbo run build --filter=admin-dashboard",
+    "build:employee": "turbo run build --filter=employee-dashboard",
+    "build:payment": "turbo run build --filter=payment-dashboard",
+    "build:landing": "turbo run build --filter=landing"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.24",
