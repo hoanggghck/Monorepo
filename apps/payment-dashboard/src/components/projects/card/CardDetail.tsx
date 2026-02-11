@@ -7,7 +7,7 @@ type CompProps = PropsWithChildren<{
   amount: number;
 }>
 
-export const CartDetail = ({title, amount, children}: CompProps) => {
+export const CardDetail = ({title, amount, children}: CompProps) => {
   return (
     <Card className="p-6">
       <p className="text-sm font-medium text-muted-foreground">
