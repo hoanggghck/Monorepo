@@ -52,7 +52,7 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
   },
   {
     label: "Liên hệ",
-    path: "/email",
+    path: "/contact",
     icon: IconMail,
   },
   {

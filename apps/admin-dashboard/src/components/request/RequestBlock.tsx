@@ -1,8 +1,8 @@
-// import { StatusRequest } from "@repo/types";
-import { Button, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui"
+import { IconClipboardList } from "@repo/icons";
+import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui"
 import { requests } from "~/mock/request"
 
-export const RequestTable = () => {
+const RequestTable = () => {
   
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -76,5 +76,19 @@ export const RequestTable = () => {
         ))}
       </TableBody>
     </Table>
+  )
+}
+
+export const RequestBlock = () => {
+  return (
+    <Card>
+      <div className="flex items-center gap-2 mb-6">
+        <IconClipboardList size={24} className="text-primary" />
+        <h2 className="text-xl font-bold text-foreground">Tất Cả Yêu Cầu</h2>
+      </div>
+      <div className="overflow-x-auto">
+        <RequestTable />
+      </div>
+    </Card>
   )
 }

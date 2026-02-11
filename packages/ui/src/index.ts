@@ -10,4 +10,5 @@ export * from "./components/select";
 export * from "./components/table";
 export * from "./components/textarea";
 export * from "./components/date-picker";
+export * from "./components/tabs";
 export * from "./utils";

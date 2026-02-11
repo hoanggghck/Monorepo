@@ -7,7 +7,7 @@ const OrganizationPage = lazy(() => import("./pages/organization"));
 const UsersPage = lazy(() => import("./pages/users"));
 const RequestsPage = lazy(() => import("./pages/requests"));
 const WorkflowsPage = lazy(() => import("./pages/workflows"));
-const EmailPage = lazy(() => import("./pages/email"));
+const ContactPage = lazy(() => import("./pages/contact"));
 const AuditPage = lazy(() => import("./pages/audit"));
 
 export const router = createBrowserRouter([
@@ -40,11 +40,10 @@ export const router = createBrowserRouter([
       {
         path: "workflows",
         element: <WorkflowsPage />
-
       },
       {
-        path: "email",
-        element: <EmailPage />
+        path: "contact",
+        element: <ContactPage />
       },
       {
         path: "audit",
