@@ -1,5 +1,6 @@
 import { IconArrowUpRight, IconDownload, IconEye } from "@repo/icons";
-import { Card } from "@repo/ui";
+import { Button, Card } from "@repo/ui";
+import { TitleBlock } from "~/components/common/TitleBlock";
 import { CardAsset, CardLiabilities, CardOwner } from "~/components/overview/card";
 import { CartDetail } from "~/components/overview/card/CartDetail";
 import { OverviewBarChart } from "~/components/overview/chart/OverviewBarChart";
@@ -35,15 +36,11 @@ export default function OverviewPage() {
   const latestQuarter = quarterlyData[quarterlyData.length - 1];
 
   return (
-    <div className="space-y-6 p-4 sm:p-6 md:p-8">
-      <div>
-        <h1 className="text-3xl font-bold text-foreground">
-          Tổng Quan Tài Chính
-        </h1>
-        <p className="mt-2 text-muted-foreground">
-          Báo cáo tài chính chi tiết, bảng cân đối kế toán và phân tích quý/năm
-        </p>
-      </div>
+    <div className="grid gap-6">
+      <TitleBlock 
+        title="Tổng Quan Tài Chính"
+        description="Báo cáo tài chính chi tiết, bảng cân đối kế toán và phân tích quý/năm"
+      />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <CartDetail title="Quý Hiện Tại" subTitle={latestQuarter.quarter}>
           <p className="mt-2 text-xs text-muted-foreground">Q4 2024</p>
@@ -116,18 +113,18 @@ export default function OverviewPage() {
           </p>
         </div>
         <div className="flex gap-2">
-          <button className="flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium transition-all hover:bg-muted">
+          <Button className="w-30">
             <IconDownload className="h-4 w-4" />
             PDF
-          </button>
-          <button className="flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium transition-all hover:bg-muted">
+          </Button>
+          <Button className="w-30">
             <IconDownload className="h-4 w-4" />
             Excel
-          </button>
-          <button className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90">
+          </Button>
+          <Button className="w-30">
             <IconEye className="h-4 w-4" />
             Xem Đầy Đủ
-          </button>
+          </Button>
         </div>
       </Card>
     </div>

@@ -16,9 +16,7 @@ const statusLabels = {
 
 export const CardProject = ({project, profit, colors}: CompProps) => {
   return (
-    <Card
-      className="p-6"
-    >
+    <Card>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         <div>
           <p className="text-xs font-medium text-muted-foreground">

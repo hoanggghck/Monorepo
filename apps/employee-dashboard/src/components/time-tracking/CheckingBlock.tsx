@@ -1,7 +1,8 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
+import { IconCalendar } from "@repo/icons";
+import { Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
 import { checkInHistory } from "~/mock/time-tracking";
 
-export const CheckingTable = () => {
+const CheckingTable = () => {
   return (
     <Table className="w-full">
       <TableHeader>
@@ -46,5 +47,19 @@ export const CheckingTable = () => {
         ))}
       </TableBody>
     </Table>
+  )
+}
+
+export const CheckingBlock = () => {
+  return (
+    <Card className="overflow-hidden md:p-0">
+      <div className="px-4 py-6 flex items-center gap-2 border-b border-gray-200">
+        <IconCalendar className="w-5 h-5 text-blue-500" />
+        <h2 className="text-lg font-bold text-gray-900">Lịch Sử Chấm Công (7 Ngày Gần Nhất)</h2>
+      </div>
+      <div className="overflow-x-auto">
+        <CheckingTable />
+      </div>
+    </Card>
   )
 }

@@ -6,6 +6,7 @@ import { AnalyticsLineChart } from "~/components/analytics/chart/AnalyticsLineCh
 import { AnalyticsPieChart } from "~/components/analytics/chart/AnalyticsPieChart";
 import { ChartWrapper } from "~/components/analytics/ChartWrapper";
 import { PercentTable } from "~/components/analytics/PercentTable";
+import { TitleBlock } from "~/components/common/TitleBlock";
 
 const growthMetrics = [
   { label: "Tăng trưởng Doanh thu", value: "+32.5%", change: "+8.2%", icon: IconTrendingUp, color: "text-secondary" },
@@ -17,13 +18,11 @@ const growthMetrics = [
 export default function AnalyticsPage() {
 
   return (
-    <div className="space-y-6 p-4 sm:p-6 md:p-8">
-      <div>
-        <h1 className="text-3xl font-bold text-foreground">Phân Tích Kinh Doanh</h1>
-        <p className="mt-2 text-muted-foreground">
-          Thống kê tăng trưởng, phân tích thu chi và theo dõi biến động tài chính
-        </p>
-      </div>
+    <div className="grid-cols-1 grid gap-6">
+      <TitleBlock 
+        title="Phân Tích Kinh Doanh"
+        description="Thống kê tăng trưởng, phân tích thu chi và theo dõi biến động tài chính"
+      />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {growthMetrics.map((metric) => {
           const Icon = metric.icon;
@@ -54,9 +53,9 @@ export default function AnalyticsPage() {
           <AnalyticsPieChart />
         </ChartWrapper>
       </div>
-      <Card className="p-6">
-        <h2 className="text-lg font-semibold text-foreground">Hiệu Suất Theo Phòng Ban</h2>
-        <div className="mt-6 overflow-x-auto">
+      <Card className="md:p-0">
+        <h2 className="text-lg font-semibold text-foreground p-4">Hiệu Suất Theo Phòng Ban</h2>
+        <div className="overflow-x-auto">
           <PercentTable />
         </div>
       </Card>
