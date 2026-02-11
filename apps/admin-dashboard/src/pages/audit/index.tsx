@@ -1,5 +1,5 @@
-import { IconBookMarked, IconSearch } from "@repo/icons";
-import { Card, Input, Label } from "@repo/ui";
+import { IconBookMarked, IconFilter } from "@repo/icons";
+import { Card, DatePicker, Input } from "@repo/ui";
 import { useState } from "react";
 import { AuditTable } from "~/components/audit/AuditTable";
 import { auditLogs } from "~/mock/audit";
@@ -7,7 +7,7 @@ import { auditLogs } from "~/mock/audit";
 export default function AuditPage() {
   const [filterUser, setFilterUser] = useState("");
   const [filterAction, setFilterAction] = useState("");
-  const [filterDate, setFilterDate] = useState("");
+  const [filterDate, setFilterDate] = useState<Date>();
 
   const filteredLogs = auditLogs.filter((log) => {
     const userMatch = log.user.toLowerCase().includes(filterUser.toLowerCase());
@@ -29,14 +29,11 @@ export default function AuditPage() {
       </div>
       <Card className="p-6 mb-6">
         <div className="flex items-center gap-2 mb-4">
-          <IconSearch size={20} className="text-muted-foreground" />
+          <IconFilter size={20} className="text-muted-foreground" />
           <h3 className="font-medium text-foreground">Bộ Lọc</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <Label className="mb-2">
-              Lọc Theo Người Dùng
-            </Label>
             <Input
               type="text"
               value={filterUser}
@@ -46,9 +43,6 @@ export default function AuditPage() {
             />
           </div>
           <div>
-            <Label className="mb-2">
-              Lọc Theo Hành Động
-            </Label>
             <Input
               type="text"
               value={filterAction}
@@ -58,14 +52,9 @@ export default function AuditPage() {
             />
           </div>
           <div>
-            <Label className="mb-2">
-              Lọc Theo Ngày
-            </Label>
-            <Input
-              type="date"
+            <DatePicker
               value={filterDate}
-              onChange={(e) => setFilterDate(e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-lg bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              onChange={setFilterDate}
             />
           </div>
         </div>
