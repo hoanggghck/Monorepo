@@ -34,16 +34,16 @@ const AuditTable = () => {
               {log.user}
             </TableCell>
             <TableCell className="py-3 px-4">
-              <span className={`inline-block px-3 py-1 rounded text-xs font-medium
+              <span className={`inline-block px-3 text-nowrap py-1 rounded text-xs font-medium
                 ${AUDIT_ACTION_COLOR[log.action]}`}>
                 {AUDIT_ACTION_LABEL[log.action]}
               </span>
             </TableCell>
             <TableCell className="py-3 px-4 text-muted-foreground text-sm">
-              {log.target}
+              <p className="min-w-30">{log.target}</p>
             </TableCell>
             <TableCell className="py-3 px-4 text-muted-foreground text-xs">
-              {log.timestamp}
+              <p className="min-w-30">{log.timestamp}</p>
             </TableCell>
             <TableCell
               className="py-3 px-4 text-muted-foreground text-xs max-w-xs truncate"
@@ -60,8 +60,8 @@ const AuditTable = () => {
 
 export const TableBlock = () => {
   return (
-    <Card>
-      <div className="flex items-center gap-2 mb-6">
+    <Card className="p-0 md:p-0">
+      <div className="flex items-center gap-2 p-4">
         <IconBookMarked size={24} className="text-primary" />
         <h2 className="text-xl font-bold text-foreground">
           Nhật Ký Hoạt Động ({auditLogs.length})

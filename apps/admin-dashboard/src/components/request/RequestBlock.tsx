@@ -29,7 +29,7 @@ const RequestTable = () => {
           <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
             Nhân Viên
           </TableHead>
-          <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
+          <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground text-nowrap">
             Chi Tiết
           </TableHead>
           <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
@@ -55,7 +55,9 @@ const RequestTable = () => {
               {request.employee}
             </TableCell>
             <TableCell className="py-3 px-4 text-muted-foreground text-xs">
-              {request.dates || request.amount || request.description}
+              <p className="min-w-30">
+                {request.dates || request.amount || request.description}
+              </p>
             </TableCell>
             <TableCell className="py-3 px-4">
               <span

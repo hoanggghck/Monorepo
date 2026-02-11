@@ -21,10 +21,12 @@ export const LogTab = () => {
               <TableRow key={log.id}>
                 <TableCell className="py-3 px-4 font-medium text-foreground">{log.recipient}</TableCell>
                 <TableCell className="py-3 px-4 text-muted-foreground">{log.subject}</TableCell>
-                <TableCell className="py-3 px-4 text-muted-foreground text-xs">{log.sent}</TableCell>
+                <TableCell className="py-3 px-4 text-muted-foreground text-xs ">
+                  <p className="min-w-30">{log.sent}</p>
+                </TableCell>
                 <TableCell className="py-3 px-4">
                   <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    className={`px-3 py-1 rounded-full text-xs font-medium text-nowrap ${
                       log.status === "Delivered"
                         ? "bg-green-100 text-green-700"
                         : "bg-red-100 text-red-700"
