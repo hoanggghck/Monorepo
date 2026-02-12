@@ -18,9 +18,9 @@ export default function NotificationsPage() {
   };
 
   return (
-    <>
-      <TitleBlock 
-        title="Thông Báo" 
+    <div className="grid grid-cols-1 gap-3">
+      <TitleBlock
+        title="Thông Báo"
         description={`Bạn có ${unreadCount} thông báo chưa đọc`}
       >
         {unreadCount > 0 && (
@@ -41,6 +41,6 @@ export default function NotificationsPage() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

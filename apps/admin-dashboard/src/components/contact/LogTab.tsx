@@ -4,7 +4,7 @@ import { emailLogs } from "~/mock/mail";
 export const LogTab = () => {
   return (
     <Card>
-      <h2 className="text-xl font-bold text-foreground mb-6">Nhật Ký Email</h2>
+      <h2 className="text-xl font-bold text-foreground p-4">Nhật Ký Email</h2>
       <div className="overflow-x-auto">
         <Table className="w-full text-sm">
           <TableHeader>

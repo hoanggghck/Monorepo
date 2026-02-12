@@ -4,8 +4,8 @@ import { recentActivity } from "~/mock/dashboard"
 
 export const ActivityCard = () => {
   return (
-    <div>
-      <div className="mb-6 flex items-center gap-2">
+    <>
+      <div className="flex items-center gap-2">
         <IconTrendingUp className="w-5 h-5 text-purple-500" />
         <h2 className="text-lg font-bold text-gray-900">Hoạt Động Nhóm</h2>
       </div>
@@ -27,6 +27,6 @@ export const ActivityCard = () => {
           </div>
         ))}
       </Card>
-    </div>
+    </>
   )
 }

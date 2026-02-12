@@ -43,7 +43,7 @@ export const StatWrapper = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
       {stats.map((stat, index) => (
-        <Card key={index}>
+        <Card className="p-4 md:p-6" key={index}>
           <div className="flex items-start justify-between mb-4">
             <div className="p-3 bg-gray-100 rounded-lg">{stat.icon}</div>
             {stat.trend && (

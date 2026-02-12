@@ -23,8 +23,8 @@ const statusColors = {
 
 export const ProjectWrapper = () => {
   return (
-    <Card className="p-0 md:p-0">
-      <div className="grid md:grid-cols-3 gap-4 border-b border-border p-4">
+    <div className="mt-6">
+      <div className="grid md:grid-cols-3 gap-4 mb-4">
         <div className="relative w-full">
           <IconSearch className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
@@ -51,12 +51,12 @@ export const ProjectWrapper = () => {
           </Button>
         </div>
       </div>
-      <div className="space-y-4 p-4">
+      <div className="space-y-4">
         {mockProjects.map((project) => {
           const colors = statusColors[project.status];
           const profit = project.revenue - project.spent;
           return (
-            <CardProject 
+            <CardProject
               key={project.id}
               colors={colors}
               profit={profit}
@@ -65,6 +65,6 @@ export const ProjectWrapper = () => {
           );
         })}
       </div>
-    </Card>
+    </div>
   )
 }

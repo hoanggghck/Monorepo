@@ -4,9 +4,9 @@ import { TitleBlock } from "~/components/common/TitleBlock";
 import { RequestBlock } from "~/components/request/RequestBlock";
 
 export default function RequestsPage() {
-  
+
   return (
-    <>
+    <div className="grid grid-cols-1 gap-3">
       <TitleBlock title="Quản Lý Yêu Cầu" description="Xem và quản lý tất cả yêu cầu của nhân viên trên toàn tổ chức.">
         <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
           <IconPlus size={18} className="mr-2" />
@@ -43,6 +43,6 @@ export default function RequestsPage() {
         />
       </div>
       <RequestBlock />
-    </>
+    </div>
   );
 }

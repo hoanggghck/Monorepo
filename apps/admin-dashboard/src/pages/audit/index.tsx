@@ -7,9 +7,9 @@ export default function AuditPage() {
   const [filterUser, setFilterUser] = useState("");
   const [filterAction, setFilterAction] = useState("");
   const [filterDate, setFilterDate] = useState<Date>();
- 
+
   return (
-    <>
+    <div className="grid grid-cols-1 gap-3">
       <TitleBlock title="Nhật Ký Kiểm Toán" description="Theo dõi tất cả các hoạt động hệ thống và hành động của người dùng để tuân thủ và bảo mật." />
       <div className="grid md:grid-cols-3 gap-6 mb-5">
         <Input
@@ -30,6 +30,6 @@ export default function AuditPage() {
         />
       </div>
       <TableBlock />
-    </>
+    </div>
   );
 }

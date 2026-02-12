@@ -10,8 +10,8 @@ export default function PayrollPage() {
   const totalPenalty = mockEmployees.reduce((sum, emp) => sum + emp.penalty, 0);
 
   return (
-    <>
-      <TitleBlock 
+    <div className="grid grid-cols-1 gap-3">
+      <TitleBlock
         title="Quản lý Bảng Lương"
         description="Quản lý lương nhân viên, thưởng, phạt và xuất báo cáo"
       />
@@ -36,6 +36,6 @@ export default function PayrollPage() {
         </Card>
       </div>
       <EmployeeBlock />
-    </>
+    </div>
   )
 }

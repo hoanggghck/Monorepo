@@ -4,7 +4,7 @@ import { notifications } from "~/mock/dashboard"
 
 export const RecentCard = () => {
   return (
-    <div className="mb-8">
+    <div className="mb-3">
       <div className="mb-6 flex items-center gap-2">
         <IconBell className="w-5 h-5 text-blue-500" />
         <h2 className="text-lg font-bold text-gray-900">Thông Báo Gần Đây</h2>

@@ -18,14 +18,14 @@ const arrTAB: TAB_TYPE[] = [
 
 export default function TasksPage() {
   const [tab, setTab] = useState<"all"| "todo" | "doing" | "done">("all");
-  const filteredTasks = tab === "all" 
-    ? taskMock 
+  const filteredTasks = tab === "all"
+    ? taskMock
     : taskMock.filter(t => t.status === tab);
 
   return (
-    <>
-      <TitleBlock 
-        title="Công Việc Của Tôi" 
+    <div className="grid grid-cols-1 gap-3">
+      <TitleBlock
+        title="Công Việc Của Tôi"
         description={`${filteredTasks.length} công việc`}
       >
         <Button>
@@ -54,6 +54,6 @@ export default function TasksPage() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

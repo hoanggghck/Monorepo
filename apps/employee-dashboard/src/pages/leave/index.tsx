@@ -7,9 +7,9 @@ import { listStatusLeave } from "~/mock/leave";
 export default function LeavePage() {
 
   return (
-    <>
-      <TitleBlock 
-        title="Quản Lý Nghỉ Phép" 
+    <div className="grid grid-cols-1 gap-3">
+      <TitleBlock
+        title="Quản Lý Nghỉ Phép"
         description="Quản lý đơn xin nghỉ và xem lịch sử"
       >
         <Button>
@@ -29,6 +29,6 @@ export default function LeavePage() {
         ))}
       </div>
       <LeaveCard />
-    </>
+    </div>
   );
 }

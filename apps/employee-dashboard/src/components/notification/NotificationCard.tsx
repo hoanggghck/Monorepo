@@ -46,7 +46,7 @@ export const NotificationCard = ({notif, setNotifications}: PageProps) => {
   return (
     <Card
       className={cn(
-        "cursor-pointer",
+        "cursor-pointer p-4 md:p-6",
         !notif.read && "border-blue-200 bg-blue-50 hover:border-blue-200"
       )}
       onClick={() => !notif.read && handleMarkAsRead(notif.id)}

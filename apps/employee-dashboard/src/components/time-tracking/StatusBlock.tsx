@@ -3,7 +3,7 @@ import { Card } from "@repo/ui"
 
 export const StatusBlock = () => {
   return (
-    <Card className="mb-5">
+    <Card className="p-4 md:p-6 mb-5">
       <h2 className="text-xl font-bold text-gray-900 mb-6">Trạng Thái Hôm Nay</h2>
       <div className="text-center p-6 bg-linear-to-br from-blue-50 to-blue-100 rounded-lg">
         <IconClock className="w-8 h-8 text-blue-600 mx-auto mb-2" />

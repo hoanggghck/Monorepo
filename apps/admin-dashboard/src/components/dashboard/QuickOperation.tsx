@@ -4,12 +4,12 @@ import {
   IconTrendingUp,
   IconUsers,
 } from "@repo/icons";
-import { Button, Card } from "@repo/ui";
+import { Button } from "@repo/ui";
 import { Link } from "react-router-dom";
 
 export const QuickOperation = () => {
   return (
-    <Card>
+    <>
       <h3 className="text-lg font-bold text-foreground mb-4">
         Thao Tác Nhanh
       </h3>
@@ -39,6 +39,6 @@ export const QuickOperation = () => {
           </Button>
         </Link>
       </div>
-    </Card>
+    </>
   )
 }

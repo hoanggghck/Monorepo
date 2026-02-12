@@ -5,11 +5,11 @@ import { RecentCard } from "~/components/dashboard/RecentCard";
 import { user } from "~/mock/dashboard";
 
 export default function DashboardPage() {
-  
+
   return (
-    <>
-      <TitleBlock 
-        title={`Chào mừng trở lại, ${user?.name.split(" ")[0]}!`} 
+    <div className="grid grid-cols-1 gap-3">
+      <TitleBlock
+        title={`Chào mừng trở lại, ${user?.name.split(" ")[0]}!`}
         description={new Date().toLocaleDateString("vi-VN", {
           weekday: "long",
           year: "numeric",
@@ -17,7 +17,7 @@ export default function DashboardPage() {
           day: "numeric",
         })}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-3">
         <EmployeeCard />
         <StatusCard />
         <TaskCard />
@@ -25,6 +25,6 @@ export default function DashboardPage() {
       </div>
       <RecentCard />
       <ActivityCard />
-    </>
+    </div>
   );
 }

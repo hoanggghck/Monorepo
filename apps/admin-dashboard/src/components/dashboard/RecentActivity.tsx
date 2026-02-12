@@ -38,8 +38,8 @@ const RecentActivity = ({ activity }: { activity: ActivityLogI }) => {
 export const RecentActivityWrapper = () => {
   return (
     <Card>
-      <div className="flex items-center justify-between mb-6">
-        <div>
+      <div className="p-4 flex items-center justify-between border-b border-border">
+        <div className="">
           <h2 className="text-xl font-bold text-foreground">
             Hoạt Động Gần Đây
           </h2>
@@ -53,7 +53,7 @@ export const RecentActivityWrapper = () => {
           </Button>
         </Link>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-4 p-4">
         {activities.map((activity) => (
           <RecentActivity key={activity.id} activity={activity} />
         ))}

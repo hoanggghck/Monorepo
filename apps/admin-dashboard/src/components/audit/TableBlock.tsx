@@ -3,9 +3,9 @@ import { Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } f
 import { AUDIT_ACTION_COLOR, AUDIT_ACTION_LABEL, auditLogs } from "~/mock/audit";
 
 const AuditTable = () => {
-  
+
   return (
-    <Table className="w-full text-sm">
+    <Table>
       <TableHeader>
         <TableRow>
           <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
@@ -60,7 +60,7 @@ const AuditTable = () => {
 
 export const TableBlock = () => {
   return (
-    <Card className="p-0 md:p-0">
+    <Card>
       <div className="flex items-center gap-2 p-4">
         <IconBookMarked size={24} className="text-primary" />
         <h2 className="text-xl font-bold text-foreground">

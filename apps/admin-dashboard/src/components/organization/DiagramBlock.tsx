@@ -2,7 +2,7 @@ import { Button, Card } from "@repo/ui"
 
 export const DiagramBlock = () => {
   return (
-    <Card>
+    <Card className="p-4 md:p-6">
       <h2 className="text-xl font-bold text-foreground mb-4">
         Sơ Đồ Tổ Chức
       </h2>

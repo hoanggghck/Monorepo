@@ -13,7 +13,7 @@ export const TemplateTab = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {emailTemplates.map((template) => (
-          <Card key={template.id}>
+          <Card className="p-4 md:p-6" key={template.id}>
             <h3 className="text-lg font-bold text-foreground mb-2">{template.name}</h3>
             <p className="text-sm text-muted-foreground mb-4">{template.category}</p>
             <div className="space-y-2 text-xs text-muted-foreground mb-4">
