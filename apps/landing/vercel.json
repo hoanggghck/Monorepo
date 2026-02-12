@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd ../.. && pnpm build --filter=landing-dashboard",
-  "outputDirectory": ".next",
+  "buildCommand": "cd ../.. && pnpm build --filter=landing",
+  "outputDirectory": "dist",
   "installCommand": "corepack enable && pnpm install --no-frozen-lockfile"
 }
