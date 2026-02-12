@@ -103,7 +103,7 @@ export const EmployeeBlock = () => {
             <SelectItem value="processing">Đang xử lý</SelectItem>
           </SelectContent>
         </Select>
-        <div className="flex flex-wrap gap-6 justify-end">
+        <div className="flex flex-wrap gap-3 justify-end">
           <Button className="w-30" variant={"outline"}>
             <IconDownload className="h-4 w-4" />
             Xuất

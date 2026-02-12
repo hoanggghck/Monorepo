@@ -5,9 +5,9 @@ import { WorkflowCard } from "~/components/workflow/WorkflowCard";
 import { workflows } from "~/mock/workflow";
 
 export default function WorkflowsPage() {
-  
+
   return (
-    <>
+    <div className="grid grid-cols-1 gap-3">
       <TitleBlock title="Cấu Hình Quy Trình" description="Cấu hình và quản lý quy trình phê duyệt trên toàn tổ chức của bạn.">
         <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
           <IconPlus size={18} className="mr-2" />
@@ -19,6 +19,6 @@ export default function WorkflowsPage() {
           <WorkflowCard workflow={workflow} key={workflow.id}/>
         ))}
       </div>
-    </>
+    </div>
   )
 }

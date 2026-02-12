@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ComposeTab } from "~/components/mail/ComposeTab";
-import { TemplateTab } from "~/components/mail/TemplateTab";
-import { LogTab } from "~/components/mail/LogTab";
+import { ComposeTab } from "~/components/contact/ComposeTab";
+import { TemplateTab } from "~/components/contact/TemplateTab";
+import { LogTab } from "~/components/contact/LogTab";
 import { TitleBlock } from "~/components/common/TitleBlock";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
 
@@ -18,7 +18,7 @@ export default function EmailPage() {
     { name: "Nhật Ký Email", key: 'log' },
   ];
   return (
-    <>
+    <div className="grid grid-cols-1 gap-3">
       <TitleBlock title="Email & Liên Lạc" description="Quản lý giao tiếp email, mẫu và nhật ký." />
       <div className="flex gap-2 mb-6 border-b border-border">
         <Tabs className="w-full" value={tab} onValueChange={(value) => setTab(value as typeof tab)}>
@@ -32,16 +32,14 @@ export default function EmailPage() {
           <TabsContent value="compose">
             <ComposeTab />
           </TabsContent>
-
           <TabsContent value="template" asChild>
             <TemplateTab />
           </TabsContent>
-
           <TabsContent value="log" asChild>
             <LogTab />
           </TabsContent>
         </Tabs>
       </div>
-    </>
+    </div>
   )
 }

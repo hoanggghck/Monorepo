@@ -52,7 +52,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
           </div>
           <nav className="flex-1 px-3 py-6 space-y-2">
             {SIDEBAR_ITEMS.map((item, index) => (
-              <SidebarItem key={index} item={item} />
+              <SidebarItem key={index} item={item} setOpen={setOpen} />
             ))}
           </nav>
           <div className="p-4 border-t border-sidebar-border space-y-3">
@@ -78,16 +78,17 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
   )
 }
 
-function SidebarItem({ item }: { item: any }) {
+const SidebarItem = ({ item, setOpen }: { item: any, setOpen: (v: boolean) => void })=> {
   const Icon = item.icon ? item.icon : () => null;
   const location = useLocation();
-  
+
   const active = location.pathname === item.path || location.pathname.startsWith(item.path + "/");
 
   return (
     <Link
       key={item.path}
       to={item.path ?? ""}
+      onClick={() => setOpen(false)}
       className={cn(
         "flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-200",
         active

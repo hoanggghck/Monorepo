@@ -1,5 +1,5 @@
 import { IconBuilding2 } from "@repo/icons"
-import { Button, Card } from "@repo/ui"
+import { Button } from "@repo/ui"
 
 const list = [
   "Kỹ Thuật",
@@ -12,7 +12,7 @@ const list = [
 
 export const PartBlock = () => {
   return (
-    <Card>
+    <>
       <h2 className="text-xl font-bold text-foreground mb-4">Bộ Phận</h2>
       <div className="space-y-3">
         {list.map((dept) => (
@@ -30,6 +30,6 @@ export const PartBlock = () => {
           </div>
         ))}
       </div>
-    </Card>
+    </>
   )
 }

@@ -2,7 +2,7 @@ import { Card, Label } from "@repo/ui"
 
 export const InformationBlock = () => {
   return (
-    <Card>
+    <Card className="p-4 md:p-6">
       <h2 className="text-xl font-bold text-foreground mb-4">
         Thông Tin Công Ty
       </h2>

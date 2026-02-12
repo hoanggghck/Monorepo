@@ -7,7 +7,7 @@ import { TitleBlock } from "~/components/common/TitleBlock";
 
 export default function DashboardPage() {
   return (
-    <>
+    <div className="grid grid-cols-1 gap-3">
       <TitleBlock title="Bảng Điều Khiển" description="Chào mừng bạn quay lại! Đây là tổng quan hệ thống HR của bạn." />
       <StatWrapper />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -19,6 +19,6 @@ export default function DashboardPage() {
           <SystemStatus />
         </div>
       </div>
-    </>
+    </div>
   );
 }

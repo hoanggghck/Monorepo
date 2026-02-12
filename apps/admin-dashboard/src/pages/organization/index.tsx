@@ -7,7 +7,7 @@ import { PartBlock } from "~/components/organization/PartBlock";
 
 export default function OrganizationPage() {
   return (
-    <>
+    <div className="grid grid-cols-1 gap-3">
       <TitleBlock title="Quản Lý Tổ Chức" description="Quản lý cấu trúc công ty, bộ phận và hệ thống phân cấp tổ chức.">
         <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
           <IconPlus size={18} className="mr-2" />
@@ -25,6 +25,6 @@ export default function OrganizationPage() {
           <DiagramBlock />
         </div>
       </div>
-    </>
+    </div>
   );
 }

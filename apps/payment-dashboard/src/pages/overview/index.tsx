@@ -36,8 +36,8 @@ export default function OverviewPage() {
   const latestQuarter = quarterlyData[quarterlyData.length - 1];
 
   return (
-    <div className="grid gap-6">
-      <TitleBlock 
+    <div className="grid grid-cols-1 gap-3">
+      <TitleBlock
         title="Tổng Quan Tài Chính"
         description="Báo cáo tài chính chi tiết, bảng cân đối kế toán và phân tích quý/năm"
       />

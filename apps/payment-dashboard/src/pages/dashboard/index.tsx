@@ -8,8 +8,8 @@ import { mockDetails, topEmployees } from "~/mock/dashboard";
 
 export default function DashboardPage() {
   return (
-    <>
-      <TitleBlock 
+    <div className="grid grid-cols-1 gap-3">
+      <TitleBlock
         title="Bảng Điều Khiển"
         description="Chào mừng trở lại! Đây là tổng quan tài chính của bạn."
       />
@@ -19,13 +19,13 @@ export default function DashboardPage() {
         ))}
       </div>
       <div className="grid gap-6 lg:grid-cols-3 mb-6">
-        <Card className="lg:col-span-2">
+        <Card className="lg:col-span-2 p-4 md:p-6">
           <h2 className="text-lg font-semibold text-foreground">Doanh Thu vs Chi Tiêu</h2>
           <div className="mt-4">
             <LineChartRevenueExpenses />
           </div>
         </Card>
-        <Card className="lg:col-span-1">
+        <Card className="lg:col-span-1 p-4 md:p-6">
           <h2 className="text-lg font-semibold text-foreground">Nhân Viên Hàng Đầu</h2>
           <div className="mt-4 space-y-4">
             {topEmployees.map((emp, idx) => (
@@ -41,6 +41,6 @@ export default function DashboardPage() {
         </Card>
       </div>
       <CurrentProject />
-    </>
+    </div>
   )
 }

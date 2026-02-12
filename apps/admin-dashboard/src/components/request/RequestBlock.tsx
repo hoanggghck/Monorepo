@@ -3,7 +3,7 @@ import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, Tabl
 import { requests } from "~/mock/request"
 
 const RequestTable = () => {
-  
+
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'approved':
@@ -20,7 +20,7 @@ const RequestTable = () => {
   };
 
   return (
-    <Table className="w-full text-sm">
+    <Table>
       <TableHeader>
         <TableRow>
           <TableHead className="text-left py-3 px-4 font-medium text-muted-foreground">
@@ -84,13 +84,11 @@ const RequestTable = () => {
 export const RequestBlock = () => {
   return (
     <Card>
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center gap-2 p-4">
         <IconClipboardList size={24} className="text-primary" />
         <h2 className="text-xl font-bold text-foreground">Tất Cả Yêu Cầu</h2>
       </div>
-      <div className="overflow-x-auto">
-        <RequestTable />
-      </div>
+      <RequestTable />
     </Card>
   )
 }

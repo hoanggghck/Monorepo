@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-20 pb-32 bg-linear-to-br from-blue-50 via-background to-cyan-50 overflow-hidden">
+    <section className="relative pt-10 pb-15 lg:pt-20 lg:pb-32 bg-linear-to-br from-blue-50 via-background to-cyan-50 overflow-hidden" id="hero">
       <div className="absolute top-0 right-0 w-96 h-96 bg-linear-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-linear-to-tr from-secondary/10 to-primary/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -24,8 +24,8 @@ export const CurrentProject = () => {
   ]
   return (
     <Card className="bg-white">
-      <h2 className="text-lg font-semibold text-foreground">Dự Án Đang Thực Hiện</h2>
-      <div className="mt-6 grid gap-4 sm:grid-cols-3">
+      <h2 className="text-lg font-semibold text-foreground p-4 md:p-6">Dự Án Đang Thực Hiện</h2>
+      <div className="grid gap-4 sm:grid-cols-3">
         {projects.map((project, idx) => (
           <div key={idx} className="bg-muted/40 p-4">
             <p className="font-semibold text-foreground">{project.name}</p>

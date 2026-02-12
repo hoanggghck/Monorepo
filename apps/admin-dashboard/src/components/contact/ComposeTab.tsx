@@ -4,7 +4,7 @@ import { emailTemplates } from "~/mock/mail";
 
 export const ComposeTab = () => {
   return (
-    <Card>
+    <Card className="p-4 md:p-6">
       <h2 className="text-xl font-bold text-foreground mb-6">Gửi Email</h2>
       <form className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

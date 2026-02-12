@@ -18,8 +18,8 @@ const growthMetrics = [
 export default function AnalyticsPage() {
 
   return (
-    <div className="grid-cols-1 grid gap-6">
-      <TitleBlock 
+    <div className="grid grid-cols-1 gap-3">
+      <TitleBlock
         title="Phân Tích Kinh Doanh"
         description="Thống kê tăng trưởng, phân tích thu chi và theo dõi biến động tài chính"
       />

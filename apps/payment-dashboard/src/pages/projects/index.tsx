@@ -18,13 +18,13 @@ export default function ProjectsPage() {
   const totalProfit = totalRevenue - totalSpent;
 
   return (
-    <div className="grid grid-cols-1 gap-6">
-      <TitleBlock 
+    <div className="grid grid-cols-1 gap-3">
+      <TitleBlock
         title="Quản lý Dự Án"
         description="Theo dõi chi phí, doanh thu và lợi nhuận từng dự án"
       />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <CardDetail 
+        <CardDetail
           title="Tổng Ngân Sách"
           amount={totalBudget}
         >
@@ -32,7 +32,7 @@ export default function ProjectsPage() {
             {mockProjects.length} dự án
           </p>
         </CardDetail>
-        <CardDetail 
+        <CardDetail
           title="Tổng Chi Tiêu"
           amount={totalSpent}
         >
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
             {((totalSpent / totalBudget) * 100).toFixed(1)}% ngân sách
           </p>
         </CardDetail>
-        <CardDetail 
+        <CardDetail
           title="Tổng Doanh Thu"
           amount={totalRevenue}
         >
@@ -48,7 +48,7 @@ export default function ProjectsPage() {
             +{formatCurrency(totalRevenue - totalSpent)}
           </p>
         </CardDetail>
-        <CardDetail 
+        <CardDetail
           title="Tổng Lợi Nhuận"
           amount={totalProfit}
         >

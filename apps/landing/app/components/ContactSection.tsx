@@ -52,10 +52,10 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-20 bg-linear-to-b from-white to-blue-50"
+      className="py-10 lg:py-20 bg-linear-to-b from-white to-blue-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Let's Work Together
           </h2>
@@ -87,7 +87,7 @@ export default function ContactSection() {
           })}
         </div>
         <div className="max-w-2xl mx-auto">
-          <div className="p-8 bg-white border border-border rounded-xl">
+          <div className="p-4 lg:p-8 bg-white border border-border rounded-xl">
             <h3 className="text-2xl font-bold text-foreground mb-6">
               Send us a message
             </h3>

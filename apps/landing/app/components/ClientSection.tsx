@@ -27,9 +27,9 @@ export default function ClientsSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="lg:py-20 bg-white" id="client">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Trusted by Industry Leaders
           </h2>
@@ -38,8 +38,8 @@ export default function ClientsSection() {
             innovative solutions.
           </p>
         </div>
-        <div className="mb-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="mb-5 lg:mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-8 lg:mb-8">
             {clients.map((client, index) => (
               <div
                 key={index}
@@ -59,7 +59,7 @@ export default function ClientsSection() {
           <h3 className="text-2xl font-bold text-foreground text-center mb-12">
             What Our Clients Say
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}

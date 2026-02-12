@@ -17,7 +17,7 @@ const IconWrapper = ({data} : { data: DashboardDetailI }) => {
 
 export const DetailCard = ({data}: {data: DashboardDetailI}) => {
   return (
-    <Card>
+    <Card className="p-4 md:p-6">
       <div className="flex items-start justify-between">
         <div>
           <p className="text-sm font-medium text-muted-foreground">{data.title}</p>

@@ -1,10 +1,9 @@
 import { IconShield } from "@repo/icons"
-import { Card } from "@repo/ui"
 import { roles } from "~/mock/user"
 
 export const RoleBlock = () => {
   return (
-    <Card>
+    <>
       <div className="flex items-center gap-2 mb-4">
         <IconShield size={24} className="text-primary" />
         <h2 className="text-xl font-bold text-foreground">Vai Trò</h2>
@@ -25,6 +24,6 @@ export const RoleBlock = () => {
           </div>
         ))}
       </div>
-    </Card>
+    </>
   )
 }
