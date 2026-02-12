@@ -10,11 +10,13 @@ export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "About", href: "/about" },
-    { label: "Careers", href: "/careers" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Home", href: "/#hero", code: "hero" },
+    { label: "Experience", href: "/#experience", code: "experience" },
+    { label: "Client", href: "/#client", code: "client" },
+    { label: "Solution", href: "/#solution", code: "solution" },
+    { label: "Technologies", href: "/#technology", code: "technology" },
+    { label: "Recuiting", href: "/#recuiting", code: "recuiting" },
+    { label: "Contact", href: "/#contact", code: "contact" },
   ];
 
   return (
@@ -81,7 +83,7 @@ export default function Layout({ children }: LayoutProps) {
           )}
         </div>
       </header>
-      <main className="flex-1">{children}</main>
+      <main className="grid grid-cols-1">{children}</main>
       <footer className="bg-foreground text-white mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">

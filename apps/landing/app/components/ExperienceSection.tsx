@@ -33,9 +33,9 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-10 lg:py-20 bg-background" id="experience">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Our Experience & Expertise
           </h2>
@@ -44,8 +44,7 @@ export default function ExperienceSection() {
             that drive innovation and growth.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center mb-10 lg:mb-20">
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-6">
               Why Choose TechFlow?

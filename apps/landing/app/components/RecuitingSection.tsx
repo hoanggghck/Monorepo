@@ -61,9 +61,9 @@ export default function RecruitingSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 lg:py-20 bg-white" id="recuiting">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Join Our Growing Team
           </h2>
@@ -72,13 +72,13 @@ export default function RecruitingSection() {
             and innovation. Help us build the future of IT consulting.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-8 mb-8 lg:mb-16">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
               <div
                 key={index}
-                className="p-8 bg-linear-to-br from-blue-50 to-cyan-50 border border-border rounded-xl hover:border-primary/30 hover:shadow-lg transition-all text-center"
+                className="p-4 lg:p-8 bg-linear-to-br from-blue-50 to-cyan-50 border border-border rounded-xl hover:border-primary/30 hover:shadow-lg transition-all text-center"
               >
                 <div className="inline-flex p-3 bg-primary/10 rounded-lg mb-4 group-hover:bg-primary/20 transition-colors">
                   <Icon className="text-primary" size={24} />

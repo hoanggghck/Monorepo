@@ -69,9 +69,9 @@ export default function TechnologiesSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 lg:py-20 bg-white" id="technology">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Technologies We Master
           </h2>
@@ -80,11 +80,11 @@ export default function TechnologiesSection() {
             and frameworks to build robust solutions.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8">
           {techCategories.map((item, index) => (
             <div
               key={index}
-              className="p-8 bg-linear-to-br from-blue-50 to-cyan-50 border border-border rounded-xl hover:border-primary/30 hover:shadow-lg transition-all"
+              className="p-4 lg:p-8 bg-linear-to-br from-blue-50 to-cyan-50 border border-border rounded-xl hover:border-primary/30 hover:shadow-lg transition-all"
             >
               <h3 className="text-lg font-semibold text-foreground mb-6">
                 {item.category}
@@ -103,7 +103,7 @@ export default function TechnologiesSection() {
             </div>
           ))}
         </div>
-        <div className="mt-16 text-center">
+        <div className="mt-8 lg:mt-16 text-center">
           <p className="text-lg text-muted-foreground mb-6">
             Don't see your technology of choice? We're always learning and expanding our expertise.
           </p>

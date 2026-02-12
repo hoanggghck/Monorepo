@@ -1,5 +1,5 @@
 import { IconPlus, IconSearch } from "@repo/icons";
-import { Button, Card, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@repo/ui";
+import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@repo/ui";
 import { mockProjects } from "~/mock/projects";
 import { CardProject } from "./card/CardProject";
 
