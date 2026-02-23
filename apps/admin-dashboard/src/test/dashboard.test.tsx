@@ -1,7 +1,7 @@
 // src/test/dashboard.test.tsx
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { describe, it, expect, vi, beforeAll } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 
 // ---- Mock @repo/icons ----
 vi.mock("@repo/icons", () => ({

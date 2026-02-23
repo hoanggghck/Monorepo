@@ -1,5 +1,11 @@
 {
   "buildCommand": "cd ../.. && pnpm build --filter=employee-dashboard",
   "outputDirectory": "dist",
-  "installCommand": "corepack enable && pnpm install --no-frozen-lockfile"
+  "installCommand": "corepack enable && pnpm install --no-frozen-lockfile",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
