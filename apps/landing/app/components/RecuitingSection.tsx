@@ -61,7 +61,7 @@ export default function RecruitingSection() {
   ];
 
   return (
-    <section className="py-10 lg:py-20 bg-white" id="recuiting">
+    <section className="py-10 lg:py-20 bg-linear-to-b from-blue-50 to-background" id="recuiting">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">

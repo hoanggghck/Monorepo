@@ -91,7 +91,7 @@ export default function SolutionsSection() {
             return (
               <div
                 key={index}
-                className="p-8 bg-white border border-border rounded-xl hover:border-primary/30 hover:shadow-xl transition-all group"
+                className="p-8 bg-white border border-border rounded-xl hover:border-primary/30 hover:shadow-xl transition-all group cursor-pointer"
               >
                 <div className="inline-flex p-3 bg-primary/10 rounded-lg mb-4 group-hover:bg-primary/20 transition-colors">
                   <Icon className="text-primary" size={24} />
