@@ -108,7 +108,7 @@ export default function SolutionsSection() {
                 <ul className="space-y-2">
                   {solution.features.map((feature, idx) => (
                     <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
+                      <span className="text-primary">•</span>
                       {feature}
                     </li>
                   ))}

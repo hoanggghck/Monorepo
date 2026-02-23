@@ -96,7 +96,7 @@ export default function RecruitingSection() {
             Open Positions
           </h3>
 
-          <div className="space-y-4">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 gap-4">
             {openPositions.map((position, index) => (
               <div
                 key={index}
