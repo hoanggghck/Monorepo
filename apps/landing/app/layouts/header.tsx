@@ -1,9 +1,39 @@
 import { IconMenu, IconX } from "@repo/icons";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.code);
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+            window.history.replaceState(null, "", `/#${id}`);
+          }
+        },
+        {
+          rootMargin: "-30% 0px -60% 0px",
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((obs) => obs.disconnect());
+    };
+  }, []);
 
   const navLinks = [
     { label: "Home", href: "/#hero", code: "hero" },
@@ -31,7 +61,11 @@ export const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  activeSection === link.code
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
+                }`}
               >
                 {link.label}
               </Link>
