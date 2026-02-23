@@ -44,7 +44,7 @@ export default function ExperienceSection() {
             that drive innovation and growth.
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center mb-10 lg:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-6">
               Why Choose TechFlow?

@@ -71,17 +71,19 @@ export default function ContactSection() {
               <a
                 key={index}
                 href={info.link}
-                className="p-8 bg-white border border-border rounded-xl hover:border-primary/30 hover:shadow-lg transition-all group"
+                className="p-8 bg-white border border-border rounded-xl hover:border-primary/30 hover:shadow-lg transition-all group flex gap-4 items-center"
               >
-                <div className="inline-flex p-3 bg-primary/10 rounded-lg mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="inline-flex p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                   <Icon className="text-primary" size={24} />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">
-                  {info.label}
-                </h3>
-                <p className="text-muted-foreground group-hover:text-primary transition-colors">
-                  {info.value}
-                </p>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    {info.label}
+                  </h3>
+                  <p className="text-muted-foreground group-hover:text-primary transition-colors">
+                    {info.value}
+                  </p>
+                </div>
               </a>
             );
           })}
