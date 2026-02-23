@@ -2,3 +2,6 @@
 @source "../../../packages/*/src/**/*.{ts,tsx}";
 @source "./**/*.{ts,tsx}";
 @source "../../../packages/tailwind-config/**/*.css";
+html {
+  scroll-behavior: smooth;
+}
