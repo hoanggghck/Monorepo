@@ -1,4 +1,5 @@
 import { IconShield } from "@repo/icons"
+import { Card } from "@repo/ui"
 import { roles } from "~/mock/user"
 
 export const RoleBlock = () => {
@@ -8,11 +9,11 @@ export const RoleBlock = () => {
         <IconShield size={24} className="text-primary" />
         <h2 className="text-xl font-bold text-foreground">Vai Trò</h2>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-4 grid gap-4 lg:grid-cols-3">
         {roles.map((role) => (
-          <div
+          <Card
             key={role.name}
-            className="p-4 border border-border rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
+            className="p-4 h-full"
           >
             <h3 className="font-medium text-foreground mb-2">
               {role.name}
@@ -21,7 +22,7 @@ export const RoleBlock = () => {
               <p>Người Dùng: {role.users}</p>
               <p>Quyền: {role.permissions}</p>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
     </>

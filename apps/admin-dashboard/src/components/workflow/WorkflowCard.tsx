@@ -4,7 +4,7 @@ import { Button, Card } from "@repo/ui"
 export const WorkflowCard = ({ workflow }: { workflow: any }) => {
   return (
     <Card className="p-6 hover:shadow-lg transition-shadow">
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex items-start justify-between mb-4 gap-3">
         <div className="flex items-start gap-4">
           <div className="p-3 bg-gray-100 rounded-lg">
             <IconSettings className="text-primary" size={24} />
@@ -24,7 +24,7 @@ export const WorkflowCard = ({ workflow }: { workflow: any }) => {
           {workflow.status}
         </span>
       </div>
-      <div className="flex flex-wrap justify-between gap-4 mb-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 align-bottom">
         <div>
           <label className="text-xs text-muted-foreground">Bước</label>
           <p className="text-lg font-semibold text-foreground">{workflow.steps}</p>
@@ -37,7 +37,7 @@ export const WorkflowCard = ({ workflow }: { workflow: any }) => {
           <label className="text-xs text-muted-foreground">SLA</label>
           <p className="text-sm text-foreground">{workflow.sla}</p>
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end items-end">
           <Button variant="outline" size="sm">
             <IconEdit2 size={16} className="mr-2" />
             Cấu Hình
