@@ -1,242 +1,191 @@
-🏗 Enterprise Workforce & Finance Platform – Monorepo Architecture
-1. Vision & Why Monorepo?
+# 🏗 Enterprise Workforce & Finance Platform (Monorepo)
 
-Đây là một nền tảng quản lý vận hành dành cho doanh nghiệp IT Consulting, bao gồm quản lý nhân sự, dự án, chấm công, payroll, tài chính và marketing tuyển dụng.
+A scalable enterprise-grade platform for managing workforce operations, project execution, payroll, and financial analytics — built with a **domain-driven monorepo architecture**.
 
-🎯 Vấn đề đặt ra
+---
 
-Khi doanh nghiệp phát triển:
+## 🚀 Live Demo
 
-Nhiều hệ thống rời rạc (HR, Task, Finance, Marketing)
+| Application | Domain | Demo |
+|------------|--------|------|
+| 🧑‍💼 Admin Dashboard | HR & Governance | https://admin-dashboard-nu-nine-96.vercel.app/ |
+| 👨‍💻 Employee Portal | Workforce Operation | https://employee-dashboard-opal-ten.vercel.app/ |
+| 💰 Payment System | Finance & Payroll | https://payment-dashboard-puce.vercel.app/ |
+| 🌐 Landing & Recruitment | Marketing & Hiring | https://monorepo-landing-seven.vercel.app/ |
 
-Trùng lặp logic & UI giữa các ứng dụng
+---
 
-Khó maintain type consistency
+## 🎯 Vision
 
-Khó scale team & kiến trúc
+This platform is designed for **IT Consulting companies** to unify:
 
-Deployment & dependency phức tạp
+- HR management
+- Task & project tracking
+- Payroll & finance
+- Recruitment & marketing
 
-🚀 Giải pháp
+➡️ Replace fragmented systems with a **single scalable ecosystem**
 
-Áp dụng Monorepo Architecture (Turborepo + pnpm workspace) để:
+---
 
-Chia domain rõ ràng theo business boundaries
+## 🧠 Why Monorepo?
 
-Tái sử dụng design system & business logic
+As companies grow:
 
-Đồng bộ type giữa toàn hệ thống
+- Multiple isolated systems
+- Duplicate UI & business logic
+- Type inconsistency
+- Hard-to-scale architecture
 
-Tối ưu performance build bằng turbo caching
+👉 This project solves that using:
 
-Dễ scale thành multi-tenant SaaS trong tương lai
+- **Turborepo**
+- **pnpm workspace**
+- **Shared design system**
+- **Centralized types**
 
-Tầm nhìn: Xây dựng một nền tảng enterprise-ready có thể mở rộng thành hệ sinh thái quản lý doanh nghiệp toàn diện.
+---
 
-2. Project Structure & Architecture
-🧩 Applications (Domain-driven separation)
+## 🧩 Applications (Domain-driven)
 
 ```
 apps/
- ├── admin      → Governance & HR Management
- ├── employee   → Workforce Operation
- ├── payment    → Finance & Payroll
- └── landing    → Marketing & Recruitment
+ ├── admin
+ ├── employee
+ ├── payment
+ └── landing
 ```
 
-🔹 Admin App
+| App | Responsibility |
+|-----|---------------|
+| admin | HR, projects, governance, audit |
+| employee | task, time tracking, leave |
+| payment | payroll, finance analytics |
+| landing | marketing, recruitment |
 
-Quản lý nhân sự, dự án, KPI, audit log, request workflow
-→ Định vị là trung tâm điều hành hệ thống
+---
 
-🔹 Employee App
+## 📦 Shared Packages
 
-Task management, leave request, time tracking, notification
-→ Giúp công ty quản lý nhân viên một cách tối ưu thông qua các chức năng đc tích hợp
-
-🔹 Payment App
-
-Payroll, project finance, analytics, revenue tracking
-→ Giúp công ty quản lý về thu, chi cũng như tạo ra hoạc định cho việc sử dụng chi phí hợp lí
-
-🔹 Landing
-
-Marketing website + tuyển dụng + SEO
-→ Hỗ trợ growth & branding
-
-📦 Shared Packages (Core Strength)
 ```
 packages/
- ├── ui          → Shared Design System
- ├── types       → Centralized TypeScript models
- ├── utils       → Reusable hooks & helpers
- └── config      → Environment & constants
+ ├── ui
+ ├── types
+ ├── utils
+ └── config
 ```
 
-Kiến trúc nổi bật
-
-Domain-based separation
-
-Feature-based folder structure
-
-Service layer abstraction
-
-Centralized type system
-
-Role-based access control (RBAC)
-
-Atomic Design System
-
-# 🛠 Tech Stack
-
-## 🧱 Monorepo & Build System
-
-- **pnpm (workspace)** – Dependency management
-- **Turborepo** – Task orchestration & caching
-- **TypeScript 5.9+** – Strict type-safe development
-- **Vite (Rolldown Vite override)** – SPA build tool
-- **Next.js 16** – Landing / SSR application
-- **PostCSS + Autoprefixer**
-- **TailwindCSS v4**
+✔ Shared UI system  
+✔ Centralized TypeScript models  
+✔ Reusable business logic  
+✔ Cross-app consistency  
 
 ---
 
-## ⚛️ Core Frontend
+## 🛠 Tech Stack
 
-- **React 19**
-- **React DOM 19**
-- **React Router DOM v7** (SPA routing)
-- **Next.js App Router** (Landing)
+### Monorepo System
+- pnpm workspace
+- Turborepo
 
----
+### Frontend
+- React 19
+- React Router v7
+- Next.js 16 (Landing SSR)
 
-## 🎨 UI System & Design Architecture
+### UI System
+- TailwindCSS v4
+- Radix UI
+- CVA (class-variance-authority)
+- Framer Motion
 
-- **Radix UI**
-  - Checkbox
-  - Dropdown Menu
-  - Label
-  - Popover
-  - Select
-  - Tabs
-  - Slot
-- **class-variance-authority (CVA)** – Variant-driven component design
-- **clsx** – Conditional class handling
-- **tailwind-merge** – Conflict-safe Tailwind merging
-- **Framer Motion** – Animation system
-- **Lucide React** – Icon system
-- **react-day-picker** – Date picker
-- Internal Design System (`@repo/ui`)
+### DX & Quality
+- TypeScript strict mode
+- ESLint 9
+- Workspace shared config
 
 ---
 
-## 🧩 Internal Shared Packages (Workspace)
+## 🏗 Architecture Highlights
 
-- `@repo/ui` – Shared design system
-- `@repo/types` – Centralized TypeScript models
-- `@repo/utils` – Reusable hooks & helpers
-- `@repo/icons` – Shared icon layer
-- `@repo/tailwind-config` – Shared Tailwind configuration
-
----
-
-## 🛠 Developer Experience & Code Quality
-
-- **ESLint 9**
-- **typescript-eslint**
-- **eslint-plugin-react-hooks**
-- **eslint-plugin-react-refresh**
-- **eslint-config-next**
-- **@vitejs/plugin-react**
+- Domain-driven design
+- Feature-based structure
+- Service layer abstraction
+- RBAC permission system
+- Atomic design system
+- Type-safe cross-application models
 
 ---
 
-## 🏗 Architecture Characteristics
+## ⚡ Performance Strategy
 
-- Workspace-based shared packages
-- Strict TypeScript enforcement across apps
-- UI abstraction via internal design system
-- Variant-driven styling system (CVA + Tailwind v4)
-- Cross-app dependency control through pnpm workspace
-- Turbo-powered incremental builds
-3. Engineering Mindset & Scalability Strategy
+- Turbo caching
+- Code splitting
+- Lazy loading
+- React Query caching
 
-Điểm tôi tập trung khi xây dựng dự án này không chỉ là feature, mà là:
+---
 
-🧠 1. Architecture for Scale
+## 🔐 Security
 
-Chuẩn hóa dependency graph
+- JWT + Refresh token flow
+- Role-based access control
+- Input validation layer
+- Environment isolation
 
-Tách domain rõ ràng để tránh coupling
+---
 
-Dễ mở rộng thành:
+## 📈 Business Flow Model
 
-Multi-tenant SaaS
+```
+Employee
+   ↓
+Task / Time Tracking
+   ↓
+Payroll Processing
+   ↓
+Financial Analytics
+   ↓
+Executive Dashboard
+```
 
-Mobile app
+---
 
-Public API ecosystem
+## 🚀 Getting Started
 
-⚡ 2. Performance-first
-
-Turbo caching
-
-Route-based code splitting
-
-Lazy loading
-
-React Query caching strategy
-
-🔐 3. Enterprise Security
-
-JWT + Refresh Token flow
-
-Role-based permission guard
-
-Input validation
-
-Environment isolation
-
-📈 4. Business-aware Frontend
-
-Thiết kế dựa trên business flow thực tế:
-
-Employee → Task/Time Tracking → Payroll → Financial Analytics → Executive Dashboard
-
-Frontend không chỉ là UI, mà là hệ thống phản ánh logic vận hành doanh nghiệp.
-
-🚀 Development
+```bash
 pnpm install
 pnpm dev
+```
 
+Run individual apps:
 
-Chạy từng app:
-
+```bash
 pnpm --filter admin dev
 pnpm --filter employee dev
 pnpm --filter payment dev
 pnpm --filter landing dev
+```
 
+Build all:
 
-Build toàn hệ thống:
-
+```bash
 pnpm build
+```
 
-🎯
+---
 
-Kiến trúc monorepo thực tế, không demo toy project
+## 🎯 Engineering Focus
 
-Domain modeling theo business
+- Scalable architecture
+- Domain-driven frontend
+- Enterprise system design
+- Type-safe monorepo
+- High-performance DX
 
-Type-safe cross-application architecture
+---
 
-Tư duy scalable SaaS platform
+## 👨‍💻 Author
 
-Tối ưu DX & performance
-
-Thiết kế Design System có thể reuse production
-
-👨‍💻 Author
-
-Senior Frontend Engineer (6+ years)
-Focused on scalable architecture, domain-driven frontend design & enterprise systems.
+**Senior Frontend Engineer (6+ years)**  
+Focused on scalable frontend architecture & enterprise systems.
